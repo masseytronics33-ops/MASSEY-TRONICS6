@@ -3,231 +3,115 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MASSEY TRONICS OS 4.0</title>
+<title>MASSEY TRONICS OS 4.2</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
-body{font-family:'Inter',sans-serif;background:#0A0A0A;color:white}
-.hero-bg{background:linear-gradient(180deg,rgba(0,0,0,0.2) 0%, #0A0A0A 100%), url('https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?q=80&w=1000') center/cover}
-.gold-gradient{background:linear-gradient(90deg,#FACC15,#F59E0B)}
+body{font-family:Inter,sans-serif;background:#0A0A0A;color:white}
+.hero-bg{background:linear-gradient(180deg,rgba(0,0,0,0.1) 0%, #0A0A0A 100%), url('https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?q=80&w=1000') center/cover}
 .card-bg{background:#151515;border:1px solid #222}
-.bottom-nav{background:#151515;border-top:1px solid #222}
+.gold{background:linear-gradient(90deg,#FACC15,#F59E0B)}
 </style>
 </head>
 <body class="pb-24">
 
-<!-- HEADER KAMA BONGO ARENA -->
-<header class="sticky top-0 z-50 bg-[#0A0A0A]/95 backdrop-blur p-4 flex justify-between items-center border-b border-zinc-900">
-  <div class="flex items-center gap-2">
-    <div class="w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center"><i class="fas fa-shield-halved text-black"></i></div>
-    <span class="font-black text-yellow-400">MASSEY TRONICS</span>
-  </div>
-  <div class="flex gap-2 items-center">
-    <span class="bg-[#1a2e1a] text-green-400 text-[10px] px-3 py-1 rounded-full font-bold">● LIVE TIPS</span>
-    <span id="userDisplay" class="text-xs bg-zinc-800 px-2 py-1 rounded-full hidden"></span>
-  </div>
+<header class="sticky top-0 z-[100] bg-[#0A0A0A]/95 backdrop-blur p-4 flex justify-between items-center border-b border-zinc-900">
+  <div class="flex items-center gap-2"><div class="w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center"><i class="fas fa-shield-halved text-black text-sm"></i></div><span class="font-black text-yellow-400 text-sm">MASSEY TRONICS</span></div>
+  <span class="bg-[#1a2e1a] text-green-400 text-[10px] px-3 py-1 rounded-full font-bold">● LIVE TIPS</span>
 </header>
 
-<!-- AUTH PAGE -->
+<!-- AUTH -->
 <div id="authPage" class="min-h-screen flex items-center justify-center p-4">
   <div class="card-bg rounded-[1.5rem] p-6 w-full max-w-md">
-    <h1 class="text-2xl font-black">MASSEY TRONICS OS</h1>
-    <p class="text-zinc-500 text-sm mb-6">Ingia uone Pro Assistant</p>
-    <div class="flex bg-black rounded-full p-1 mb-6">
-      <button onclick="showTab('login')" id="loginTab" class="flex-1 py-2 rounded-full bg-white text-black font-bold text-sm">Login</button>
-      <button onclick="showTab('register')" id="registerTab" class="flex-1 py-2 rounded-full text-zinc-500 text-sm">Jisajili</button>
-    </div>
-    <div id="loginForm">
-      <input id="loginUser" placeholder="Jina" class="w-full p-3 rounded-xl bg-black border border-zinc-800 mb-3 text-sm">
-      <input id="loginPass" type="password" placeholder="Password" class="w-full p-3 rounded-xl bg-black border border-zinc-800 mb-3 text-sm">
-      <button onclick="login()" class="w-full bg-white text-black font-black py-3 rounded-xl mb-3">INGIA</button>
-      <button onclick="startFaceLogin()" class="w-full gold-gradient text-black py-3 rounded-xl font-black text-sm"><i class="fas fa-face-smile mr-2"></i>INGIA KWA USO - FACE ID</button>
-    </div>
-    <div id="registerForm" class="hidden">
-      <input id="regUser" placeholder="Jina kamili" class="w-full p-3 rounded-xl bg-black border border-zinc-800 mb-2 text-sm">
-      <input id="regPhone" placeholder="Namba 07XXXXXXXX" class="w-full p-3 rounded-xl bg-black border border-zinc-800 mb-2 text-sm">
-      <input id="regPass" type="password" placeholder="Password" class="w-full p-3 rounded-xl bg-black border border-zinc-800 mb-2 text-sm">
-      <div class="card-bg rounded-xl p-3 mb-3">
-        <p class="text-xs mb-2 font-bold text-yellow-400">FACE RECOGNITION</p>
-        <video id="video" autoplay class="w-full h-[160px] rounded-xl bg-black object-cover"></video>
-        <canvas id="canvas" class="hidden"></canvas>
-        <img id="facePreview" class="hidden w-full h-[160px] object-cover rounded-xl">
-        <button onclick="captureFace()" class="w-full mt-2 bg-zinc-800 py-2 rounded-xl text-xs">PIGA PICHA YA USO</button>
-        <p id="faceStatus" class="text-xs text-green-400 mt-2 text-center font-bold"></p>
-      </div>
-      <button onclick="register()" class="w-full bg-white text-black font-black py-3 rounded-xl">FUNGUA ACCOUNT</button>
-    </div>
+    <h1 class="text-xl font-black">MASSEY TRONICS OS 4.2</h1><p class="text-zinc-500 text-xs mb-6">Home + Profile Only</p>
+    <div class="flex bg-black rounded-full p-1 mb-6"><button onclick="showTab('login')" id="loginTab" class="flex-1 py-2 rounded-full bg-white text-black font-bold text-sm">Login</button><button onclick="showTab('register')" id="registerTab" class="flex-1 py-2 rounded-full text-zinc-500 text-sm">Jisajili</button></div>
+    <div id="loginForm"><input id="loginUser" placeholder="Jina" class="w-full p-3 rounded-xl bg-black border border-zinc-800 mb-3 text-sm"><input id="loginPass" type="password" placeholder="Password" class="w-full p-3 rounded-xl bg-black border border-zinc-800 mb-3 text-sm"><button onclick="login()" class="w-full bg-white text-black font-black py-3 rounded-xl mb-3">INGIA</button><button onclick="startFaceLogin()" class="w-full gold text-black py-3 rounded-xl font-black text-sm">INGIA KWA USO</button></div>
+    <div id="registerForm" class="hidden"><input id="regUser" placeholder="Jina kamili" class="w-full p-3 rounded-xl bg-black border border-zinc-800 mb-2 text-sm"><input id="regPhone" placeholder="Namba 07XXXXXXXX" class="w-full p-3 rounded-xl bg-black border border-zinc-800 mb-2 text-sm"><input id="regPass" type="password" placeholder="Password" class="w-full p-3 rounded-xl bg-black border border-zinc-800 mb-2 text-sm"><div class="card-bg rounded-xl p-3 mb-3"><p class="text-xs mb-2 font-bold text-yellow-400">FACE ID</p><video id="video" autoplay class="w-full h-[150px] rounded-xl bg-black object-cover"></video><canvas id="canvas" class="hidden"></canvas><img id="facePreview" class="hidden w-full h-[150px] object-cover rounded-xl"><button onclick="captureFace()" class="w-full mt-2 bg-zinc-800 py-2 rounded-xl text-xs">PIGA PICHA</button><p id="faceStatus" class="text-xs text-green-400 mt-2 text-center font-bold"></p></div><button onclick="register()" class="w-full bg-white text-black font-black py-3 rounded-xl">FUNGUA</button></div>
   </div>
 </div>
 
-<!-- MAIN APP - BONGO ARENA STYLE -->
+<!-- MAIN -->
 <div id="mainApp" class="hidden">
-  <!-- HERO KAMA BONGO ARENA -->
-  <div class="hero-bg p-6 pt-12">
-    <h1 class="text-4xl font-black leading-none">BET SMART.<br><span class="text-yellow-400">WIN BIG.</span></h1>
-    <p class="text-zinc-400 text-sm mt-3">Mikeka ya moto na odds zenye nguvu kila siku.</p>
-    <button onclick="showSection('tips')" class="gold-gradient text-black font-black px-6 py-2 rounded-full mt-4 text-sm">Pata Tips</button>
-  </div>
+  <!-- HOME - SEHEMU TATU ZOTE NDANI YA HOME MOJA -->
+  <div id="homeSection">
+    <!-- HERO -->
+    <div class="hero-bg p-6 pt-10"><h1 class="text-4xl font-black leading-none">BET SMART.<br><span class="text-yellow-400">WIN BIG.</span></h1><p class="text-zinc-400 text-sm mt-3">Mikeka ya moto na odds kali kila siku.</p></div>
 
-  <!-- ADS TOP -->
-  <div id="adTop" class="mx-4 mt-4 card-bg rounded-xl p-2 text-center min-h-[70px] flex items-center justify-center border border-yellow-500/10">
-    <span class="text-[10px] text-zinc-600">TANGAZO - Adsterra 728x90</span>
-  </div>
+    <div id="adTop" class="mx-4 mt-4 card-bg rounded-xl p-2 text-center min-h-[60px] flex items-center justify-center"><span class="text-[10px] text-zinc-600">TANGAZO JUU</span></div>
 
-  <!-- VIP TIPSTERS = VIP SERVICES YAKO -->
-  <div class="p-4">
-    <h2 class="font-black text-sm">VIP <span class="text-green-400">TIPSTERS</span></h2>
-    <div id="vipList" class="flex gap-3 overflow-x-auto mt-3 pb-2">
-      <!-- Ita-jazwa na Admin -->
+    <!-- SEHEMU 1 NDANI YA HOME: VIP TIPSTERS -->
+    <div class="p-4 mt-2"><h2 class="font-black text-sm">VIP <span class="text-green-400">TIPSTERS</span></h2><div id="vipList" class="flex gap-3 overflow-x-auto mt-3 pb-2"></div></div>
+
+    <!-- SEHEMU 2 NDANI YA HOME: TRENDING NOW / GAMES -->
+    <div class="p-4"><h2 class="font-black flex items-center gap-2 text-sm">🔥 TRENDING NOW - GAMES & IT</h2><div id="gamesList" class="grid grid-cols-2 gap-3 mt-3"></div><div id="itList" class="grid gap-2 mt-3"></div></div>
+
+    <div id="adInHome" class="mx-4 card-bg rounded-xl p-3 text-center min-h-[80px] flex items-center justify-center"><span class="text-[10px] text-zinc-600">TANGAZO KATI</span></div>
+
+    <!-- SEHEMU 3 NDANI YA HOME: VIFURUSHI & BETSLIPS / GAMBLING -->
+    <div class="p-4"><h2 class="font-black text-yellow-400 text-sm">VIFURUSHI & BETSLIPS - GAMBLING</h2>
+      <div class="grid grid-cols-2 gap-3 mt-3">
+        <div class="card-bg rounded-xl p-3 border-l-2 border-violet-500"><p class="text-[10px] font-black">MINES PREDICTOR</p><div id="minesCode" class="text-xs font-mono text-green-400 mt-2 bg-black p-2 rounded">3,7,12 SAFE</div></div>
+        <div class="card-bg rounded-xl p-3 border-l-2 border-red-500"><p class="text-[10px] font-black">AVIATOR SIGNAL</p><div id="aviatorCode" class="text-xs font-mono text-red-400 mt-2 bg-black p-2 rounded">2.45x</div></div>
+      </div>
+      <div id="gamblingList" class="grid gap-2 mt-3"></div><div id="betslips" class="mt-3 space-y-2"></div>
     </div>
+
+    <div id="adInGamble" class="mx-4 mb-4 card-bg rounded-xl p-3 text-center min-h-[80px] flex items-center justify-center border border-red-500/10"><span class="text-[10px] text-zinc-600">TANGAZO GAMBLING</span></div>
   </div>
 
-  <!-- SECTIONS -->
-  <div id="mwanzoSection" class="p-4">
-    <h2 class="font-black flex items-center gap-2"><span class="text-orange-500">🔥</span> TRENDING NOW - GAMES</h2>
-    <div id="gamesList" class="grid grid-cols-2 gap-3 mt-3"></div>
-    <div id="adInGames" class="card-bg rounded-xl p-3 text-center mt-4 min-h-[100px] flex items-center justify-center"><span class="text-[10px] text-zinc-600">TANGAZO NDANI YA GAMES</span></div>
-  </div>
-
-  <div id="tipsSection" class="hidden p-4">
-    <h2 class="font-black text-yellow-400">VIFURUSHI & BETSLIPS</h2>
-    <div id="betslips" class="mt-4 space-y-3"></div>
-    
-    <h2 class="font-black mt-6">IT ISSUES & APPS</h2>
-    <div id="itList" class="grid gap-3 mt-3"></div>
-    <div id="adInIT" class="card-bg rounded-xl p-3 text-center mt-4 min-h-[80px] flex items-center justify-center"><span class="text-[10px] text-zinc-600">TANGAZO IT</span></div>
-
-    <h2 class="font-black mt-6 text-red-400">GAMBLING PRO ASSISTANT</h2>
-    <div class="grid grid-cols-2 gap-3 mt-3">
-      <div class="card-bg rounded-xl p-3 border-l-2 border-violet-500"><p class="text-xs font-bold">MINES</p><div id="minesCode" class="text-xs font-mono text-green-400 mt-2">3,7,12 SAFE</div></div>
-      <div class="card-bg rounded-xl p-3 border-l-2 border-red-500"><p class="text-xs font-bold">AVIATOR</p><div id="aviatorCode" class="text-xs font-mono text-red-400 mt-2">2.45x</div></div>
-    </div>
-    <div id="gamblingList" class="grid gap-3 mt-4"></div>
-    <div id="adInGamble" class="card-bg rounded-xl p-3 text-center mt-4 min-h-[80px] flex items-center justify-center border border-red-500/10"><span class="text-[10px] text-zinc-600">TANGAZO GAMBLING</span></div>
-  </div>
-
-  <div id="akauntiSection" class="hidden p-4">
+  <!-- PROFILE - SEHEMU YA PILI PEKEE -->
+  <div id="profileSection" class="hidden p-4">
     <h2 class="font-black text-yellow-400 text-xl">AKAUNTI YANGU</h2>
-    <div class="card-bg rounded-2xl p-5 mt-4 flex gap-4 items-center">
-      <div class="w-16 h-16 bg-zinc-800 rounded-full flex items-center justify-center text-2xl font-black" id="avatarLetter">M</div>
-      <div>
-        <p class="text-xs bg-zinc-800 inline px-2 py-1 rounded">MEMBER</p>
-        <p id="accName" class="font-black mt-1">Masseytronics</p>
-        <p id="accPhone" class="text-xs text-zinc-400">+255 710 376 132</p>
-        <p id="accID" class="text-[10px] text-zinc-500">ID: MT001</p>
-      </div>
-    </div>
-    <div class="mt-4 space-y-2">
-      <button class="w-full card-bg p-4 rounded-xl text-left text-sm"><i class="fas fa-edit mr-2"></i>HARIRI WASIFU</button>
-      <button class="w-full card-bg p-4 rounded-xl text-left text-sm"><i class="fas fa-key mr-2"></i>BADILISHA NENO LA SIRI</button>
-      <button onclick="logout()" class="w-full bg-red-900/30 p-4 rounded-xl text-left text-sm text-red-400">Toka</button>
+    <div class="card-bg rounded-2xl p-5 mt-4">
+      <div class="flex gap-4 items-center"><img id="profileFace" src="" class="w-20 h-20 rounded-full object-cover bg-zinc-800 border-2 border-yellow-400"><div><p class="text-[10px] bg-zinc-800 px-2 py-1 rounded inline">MEMBER</p><p id="accName" class="font-black text-lg mt-1">Massey</p><p id="accPhone" class="text-sm text-green-400">+255...</p><p id="accID" class="text-[10px] text-zinc-500 mt-1">ID: MT-123</p><p id="accDate" class="text-[10px] text-zinc-500">Tarehe: ...</p></div></div>
+      <div class="mt-4 grid grid-cols-2 gap-2"><button onclick="document.getElementById('faceUpdate').classList.toggle('hidden')" class="card-bg p-3 rounded-xl text-xs border border-zinc-700"><i class="fas fa-camera mr-1"></i>Badilisha Picha</button><button onclick="logout()" class="bg-red-900/30 p-3 rounded-xl text-xs text-red-400 border border-red-900/50">Toka Account</button></div>
+      <div id="faceUpdate" class="hidden mt-3 card-bg p-3 rounded-xl"><video id="video2" autoplay class="w-full h-[120px] rounded-xl bg-black object-cover"></video><canvas id="canvas2" class="hidden"></canvas><button onclick="updateFace()" class="w-full mt-2 bg-yellow-400 text-black py-2 rounded-xl text-xs font-bold">Hifadhi Picha Mpya</button></div>
     </div>
 
-    <!-- ADMIN PANEL NDANI YA AKAUNTI -->
-    <div id="adminSection" class="hidden mt-6">
-      <div class="bg-yellow-400 text-black rounded-2xl p-4">
-        <h2 class="font-black">ADMIN CONTROL - MASSEY ONLY</h2>
-        <div class="grid grid-cols-3 gap-2 mt-3">
-          <div class="bg-black text-white rounded-xl p-2 text-center"><p class="text-xl font-black" id="totalUsers">0</p><p class="text-[10px]">Watu</p></div>
-          <div class="bg-black text-white rounded-xl p-2 text-center"><p class="text-xl font-black" id="totalGames">0</p><p class="text-[10px]">Games</p></div>
-          <div class="bg-black text-white rounded-xl p-2 text-center"><p class="text-xl font-black" id="totalPhone">0</p><p class="text-[10px]">Namba</p></div>
-        </div>
-      </div>
-
-      <div class="card-bg rounded-xl p-4 mt-4">
-        <h3 class="font-bold text-sm mb-2 text-yellow-400">WEKA TANGAZO</h3>
-        <select id="adPosition" class="w-full p-2 rounded-lg bg-black border border-zinc-800 mb-2 text-sm"><option value="adTop">Juu</option><option value="adInGames">Games</option><option value="adInIT">IT</option><option value="adInGamble">Gambling</option></select>
-        <textarea id="adCode" placeholder="Adsterra code" class="w-full p-2 rounded-lg bg-black border border-zinc-800 mb-2 h-16 text-xs"></textarea>
-        <button onclick="addAd()" class="bg-yellow-400 text-black w-full py-2 rounded-lg font-black text-sm">WEKA LIVE</button>
-      </div>
-
-      <div class="card-bg rounded-xl p-4 mt-4">
-        <h3 class="font-bold text-sm mb-2">ONGEZA VIP TIPSTER</h3>
-        <input id="vipName" placeholder="Jina kama ZEE LA KULISHA MITAA" class="w-full p-2 rounded-lg bg-black border border-zinc-800 mb-2 text-sm">
-        <input id="vipAcc" placeholder="Accuracy kama 98% accuracy" class="w-full p-2 rounded-lg bg-black border border-zinc-800 mb-2 text-sm">
-        <button onclick="addVip()" class="bg-white text-black w-full py-2 rounded-lg font-bold text-sm">Ongeza VIP</button>
-      </div>
-
-      <div class="card-bg rounded-xl p-4 mt-4">
-        <h3 class="font-bold text-sm mb-2">ONGEZA GAME / BETSLIP</h3>
-        <input id="gameTitle" placeholder="Jina la game" class="w-full p-2 rounded-lg bg-black border border-zinc-800 mb-2 text-sm">
-        <input id="gameLink" placeholder="Link" class="w-full p-2 rounded-lg bg-black border border-zinc-800 mb-2 text-sm">
-        <input id="gameWins" placeholder="Wins kama 99% - 10 wins" class="w-full p-2 rounded-lg bg-black border border-zinc-800 mb-2 text-sm">
-        <button onclick="addGame()" class="bg-white text-black w-full py-2 rounded-lg font-bold text-sm">Upload</button>
-      </div>
-
-      <div class="card-bg rounded-xl p-4 mt-4">
-        <h3 class="font-bold text-sm mb-2">CODE ZA MINES / AVIATOR</h3>
-        <input id="gambleTitle" placeholder="Mines / Aviator" class="w-full p-2 rounded-lg bg-black border border-zinc-800 mb-2 text-sm">
-        <input id="gambleCode" placeholder="Code" class="w-full p-2 rounded-lg bg-black border border-zinc-800 mb-2 text-sm">
-        <button onclick="addGamble()" class="bg-yellow-400 text-black w-full py-2 rounded-lg font-black text-sm">Upload Code</button>
-      </div>
-
-      <div class="card-bg rounded-xl p-4 mt-4">
-        <h3 class="font-bold text-sm mb-2 text-green-400">WATU WALIOJISAJILI + NAMBA</h3>
-        <div id="usersDB" class="bg-black rounded-xl p-2 max-h-[300px] overflow-y-auto text-xs"></div>
-        <button onclick="downloadNumbers()" class="mt-2 bg-green-600 w-full py-2 rounded-lg font-bold text-xs">Pakua Namba CSV</button>
-      </div>
+    <!-- ADMIN PANEL - INAONEKANA TU KWA ADMIN - INABONYEKA 100% -->
+    <div id="adminPanel" class="hidden mt-6">
+      <div class="bg-yellow-400 text-black rounded-2xl p-4"><h2 class="font-black text-sm">ADMIN CONTROL</h2><div class="grid grid-cols-3 gap-2 mt-3"><div class="bg-black text-white rounded-xl p-2 text-center"><p class="text-xl font-black" id="totalUsers">0</p><p class="text-[9px]">WATU</p></div><div class="bg-black text-white rounded-xl p-2 text-center"><p class="text-xl font-black" id="totalGames">0</p><p class="text-[9px]">GAMES</p></div><div class="bg-black text-white rounded-xl p-2 text-center"><p class="text-xl font-black" id="totalPhone">0</p><p class="text-[9px]">NAMBA</p></div></div></div>
+      <div class="card-bg rounded-xl p-4 mt-4"><h3 class="font-bold text-sm mb-2 text-yellow-400">WEKA TANGAZO</h3><select id="adPosition" class="w-full p-2 rounded-lg bg-black border border-zinc-800 mb-2 text-sm"><option value="adTop">Juu</option><option value="adInHome">Kati ya Home</option><option value="adInGamble">Gambling</option></select><textarea id="adCode" placeholder="Adsterra code" class="w-full p-2 rounded-lg bg-black border border-zinc-800 mb-2 h-16 text-xs"></textarea><button onclick="addAd()" class="bg-yellow-400 text-black w-full py-2 rounded-lg font-black text-sm">WEKA LIVE</button></div>
+      <div class="card-bg rounded-xl p-4 mt-4"><h3 class="font-bold text-sm mb-2">VIP TIPSTER</h3><input id="vipName" placeholder="Jina" class="w-full p-2 rounded-lg bg-black border border-zinc-800 mb-2 text-sm"><input id="vipAcc" placeholder="98% accuracy" class="w-full p-2 rounded-lg bg-black border border-zinc-800 mb-2 text-sm"><button onclick="addVip()" class="bg-white text-black w-full py-2 rounded-lg font-bold text-sm">ONGEZA</button></div>
+      <div class="card-bg rounded-xl p-4 mt-4"><h3 class="font-bold text-sm mb-2">GAME / BETSLIP</h3><input id="gameTitle" placeholder="Jina" class="w-full p-2 rounded-lg bg-black border border-zinc-800 mb-2 text-sm"><input id="gameLink" placeholder="Link" class="w-full p-2 rounded-lg bg-black border border-zinc-800 mb-2 text-sm"><input id="gameWins" placeholder="99% - 10 wins" class="w-full p-2 rounded-lg bg-black border border-zinc-800 mb-2 text-sm"><button onclick="addGame()" class="bg-white text-black w-full py-2 rounded-lg font-bold text-sm">UPLOAD</button></div>
+      <div class="card-bg rounded-xl p-4 mt-4"><h3 class="font-bold text-sm mb-2">CODE GAMBLING</h3><input id="gambleTitle" placeholder="Mines/Aviator" class="w-full p-2 rounded-lg bg-black border border-zinc-800 mb-2 text-sm"><input id="gambleCode" placeholder="Code" class="w-full p-2 rounded-lg bg-black border border-zinc-800 mb-2 text-sm"><button onclick="addGamble()" class="bg-yellow-400 text-black w-full py-2 rounded-lg font-black text-sm">UPLOAD</button></div>
+      <div class="card-bg rounded-xl p-4 mt-4"><h3 class="font-bold text-sm mb-2 text-green-400">NAMBA ZA WATEJA</h3><div id="usersDB" class="bg-black rounded-xl p-2 max-h-[400px] overflow-y-auto text-xs"></div><button onclick="downloadNumbers()" class="mt-2 bg-green-600 w-full py-2 rounded-lg font-bold text-xs">Pakua CSV</button></div>
     </div>
   </div>
 </div>
 
-<!-- BOTTOM NAV KAMA BONGO ARENA -->
-<div id="bottomNav" class="hidden fixed bottom-0 left-0 right-0 bottom-nav flex justify-around p-2">
-  <button onclick="showSection('mwanzo')" class="flex flex-col items-center text-yellow-400"><i class="fas fa-home"></i><span class="text-[10px] mt-1">Mwanzo</span></button>
-  <button onclick="showSection('tips')" class="flex flex-col items-center text-zinc-500"><i class="fas fa-fire"></i><span class="text-[10px] mt-1">Tips</span></button>
-  <button onclick="showSection('akaunti')" class="flex flex-col items-center text-zinc-500"><i class="fas fa-user"></i><span class="text-[10px] mt-1">Akaunti</span></button>
+<!-- BOTTOM NAV - 2 TU KAMA ULICHOOMBA -->
+<div id="bottomNav" class="hidden fixed bottom-0 left-0 right-0 bg-[#151515] border-t border-zinc-800 flex justify-around p-3 z-[100]">
+  <button onclick="showSection('home')" id="navHome" class="flex flex-col items-center text-yellow-400"><i class="fas fa-home text-lg"></i><span class="text-[10px] mt-1 font-bold">Mwanzo</span></button>
+  <button onclick="showSection('profile')" id="navProfile" class="flex flex-col items-center text-zinc-500"><i class="fas fa-user text-lg"></i><span class="text-[10px] mt-1">Akaunti</span></button>
 </div>
 
 <script>
 let faceData=null;
 let users=JSON.parse(localStorage.getItem('massey_users')||'[]');
 let games=JSON.parse(localStorage.getItem('massey_games')||'[]');
-let vips=JSON.parse(localStorage.getItem('massey_vips')||'[{"name":"Bongo Arena","acc":"99% accuracy"},{"name":"ZEE LA KULISHA MITAA","acc":"98% accuracy"},{"name":"MKWANIA TIPS","acc":"98% - 10 wins"}]');
+let vips=JSON.parse(localStorage.getItem('massey_vips')||'[{"name":"Bongo Arena","acc":"99% accuracy"},{"name":"ZEE LA KULISHA MITAA","acc":"98% accuracy"}]');
 let gambles=JSON.parse(localStorage.getItem('massey_gambles')||'[]');
 let ads=JSON.parse(localStorage.getItem('massey_ads')||'{}');
 let its=JSON.parse(localStorage.getItem('massey_it')||'[]');
 let currentUser=JSON.parse(localStorage.getItem('massey_current')||'null');
-
 function showTab(t){document.getElementById('loginForm').classList.toggle('hidden',t!=='login');document.getElementById('registerForm').classList.toggle('hidden',t!=='register');if(t==='register')startCamera();}
-async function startCamera(){try{const s=await navigator.mediaDevices.getUserMedia({video:true});document.getElementById('video').srcObject=s;}catch(e){}}
+async function startCamera(){try{const s=await navigator.mediaDevices.getUserMedia({video:true});document.getElementById('video').srcObject=s;const v2=document.getElementById('video2');if(v2) v2.srcObject=s;}catch(e){}}
 function captureFace(){const v=document.getElementById('video'),c=document.getElementById('canvas');c.width=v.videoWidth;c.height=v.videoHeight;c.getContext('2d').drawImage(v,0,0);faceData=c.toDataURL('image/png');document.getElementById('facePreview').src=faceData;document.getElementById('facePreview').classList.remove('hidden');document.getElementById('video').classList.add('hidden');document.getElementById('faceStatus').innerText='✅ Uso umehifadhiwa!';}
-function register(){const u=document.getElementById('regUser').value,ph=document.getElementById('regPhone').value,p=document.getElementById('regPass').value;if(!u||!ph||!p)return alert('Jaza vyote!');if(!faceData)return alert('Piga picha ya uso!');users.push({user:u,phone:ph,pass:p,face:faceData,date:new Date().toLocaleString()});localStorage.setItem('massey_users',JSON.stringify(users));alert('Account imefunguliwa! Admin ataona namba yako');showTab('login');}
+function register(){const u=document.getElementById('regUser').value,ph=document.getElementById('regPhone').value,p=document.getElementById('regPass').value;if(!u||!ph||!p)return alert('Jaza!');if(!faceData)return alert('Piga picha!');users.push({user:u,phone:ph,pass:p,face:faceData,date:new Date().toLocaleString()});localStorage.setItem('massey_users',JSON.stringify(users));alert('Umefanikiwa!');showTab('login');}
 function login(){const u=document.getElementById('loginUser').value,p=document.getElementById('loginPass').value;const f=users.find(x=>x.user===u&&x.pass===p);if(!f)return alert('Wrong');localStorage.setItem('massey_current',JSON.stringify(f));enterApp(f);}
 function startFaceLogin(){const u=document.getElementById('loginUser').value;if(!u)return alert('Andika jina');const f=users.find(x=>x.user===u);if(!f)return alert('Hayupo');localStorage.setItem('massey_current',JSON.stringify(f));enterApp(f);}
-function enterApp(user){
-  document.getElementById('authPage').classList.add('hidden');document.getElementById('mainApp').classList.remove('hidden');document.getElementById('bottomNav').classList.remove('hidden');
-  document.getElementById('userDisplay').innerText=user.user;document.getElementById('userDisplay').classList.remove('hidden');
-  document.getElementById('accName').innerText=user.user;document.getElementById('accPhone').innerText=user.phone;document.getElementById('avatarLetter').innerText=user.user[0].toUpperCase();
-  if(user.user.toLowerCase()==='admin'||user.user.toLowerCase()==='massey'){document.getElementById('adminSection').classList.remove('hidden');}
-  renderAll();loadAds();
-}
-function showSection(s){
-  ['mwanzo','tips','akaunti'].forEach(x=>document.getElementById(x+'Section').classList.add('hidden'));
-  document.getElementById(s+'Section').classList.remove('hidden');
-  document.querySelectorAll('#bottomNav button').forEach(b=>b.className='flex flex-col items-center text-zinc-500');
-  if(s==='mwanzo') document.querySelectorAll('#bottomNav button')[0].className='flex flex-col items-center text-yellow-400';
-  if(s==='tips') document.querySelectorAll('#bottomNav button')[1].className='flex flex-col items-center text-yellow-400';
-  if(s==='akaunti'){document.querySelectorAll('#bottomNav button')[2].className='flex flex-col items-center text-yellow-400';renderUsers();}
-}
-function addVip(){const n=document.getElementById('vipName').value,a=document.getElementById('vipAcc').value;if(!n)return alert('Jaza jina');vips.push({name:n,acc:a||'99% accuracy'});localStorage.setItem('massey_vips',JSON.stringify(vips));renderAll();}
-function addGame(){const t=document.getElementById('gameTitle').value,l=document.getElementById('gameLink').value,w=document.getElementById('gameWins').value;if(!t)return alert('Jaza');games.push({title:t,link:l,wins:w||'99% - 10 wins'});localStorage.setItem('massey_games',JSON.stringify(games));renderAll();}
+function enterApp(user){document.getElementById('authPage').classList.add('hidden');document.getElementById('mainApp').classList.remove('hidden');document.getElementById('bottomNav').classList.remove('hidden');document.getElementById('accName').innerText=user.user;document.getElementById('accPhone').innerText=user.phone;document.getElementById('accID').innerText='ID: MT-'+user.phone.slice(-4);document.getElementById('accDate').innerText='Tarehe: '+user.date;document.getElementById('profileFace').src=user.face;if(user.user.toLowerCase()==='admin'||user.user.toLowerCase()==='massey'){document.getElementById('adminPanel').classList.remove('hidden');}renderAll();loadAds();showSection('home');}
+function showSection(s){document.getElementById('homeSection').classList.toggle('hidden',s!=='home');document.getElementById('profileSection').classList.toggle('hidden',s!=='profile');document.getElementById('navHome').className=s==='home'?'flex flex-col items-center text-yellow-400':'flex flex-col items-center text-zinc-500';document.getElementById('navProfile').className=s==='profile'?'flex flex-col items-center text-yellow-400':'flex flex-col items-center text-zinc-500';if(s==='profile')renderUsers();}
+function addVip(){const n=document.getElementById('vipName').value,a=document.getElementById('vipAcc').value;if(!n)return alert('Jaza');vips.push({name:n,acc:a||'99%'});localStorage.setItem('massey_vips',JSON.stringify(vips));renderAll();}
+function addGame(){const t=document.getElementById('gameTitle').value,l=document.getElementById('gameLink').value,w=document.getElementById('gameWins').value;if(!t)return alert('Jaza');games.push({title:t,link:l,wins:w||'99%'});localStorage.setItem('massey_games',JSON.stringify(games));renderAll();}
 function addGamble(){const t=document.getElementById('gambleTitle').value,l=document.getElementById('gambleCode').value;if(!t||!l)return alert('Jaza');gambles.push({title:t,code:l});localStorage.setItem('massey_gambles',JSON.stringify(gambles));renderAll();}
-function addAd(){const pos=document.getElementById('adPosition').value,code=document.getElementById('adCode').value;if(!code)return alert('Weka code');ads[pos]=code;localStorage.setItem('massey_ads',JSON.stringify(ads));loadAds();alert('Tangazo LIVE!');}
+function addAd(){const pos=document.getElementById('adPosition').value,code=document.getElementById('adCode').value;if(!code)return alert('Weka');ads[pos]=code;localStorage.setItem('massey_ads',JSON.stringify(ads));loadAds();alert('LIVE!');}
 function loadAds(){Object.keys(ads).forEach(k=>{const el=document.getElementById(k);if(el&&ads[k])el.innerHTML=ads[k];});}
-function renderAll(){
-  document.getElementById('vipList').innerHTML=vips.map(v=>`<div class="card-bg rounded-2xl p-3 min-w-[110px] text-center"><div class="w-14 h-14 bg-zinc-800 rounded-full mx-auto flex items-center justify-center font-black">${v.name[0]}</div><p class="text-xs font-bold mt-2">${v.name}</p><p class="text-[10px] text-green-400">${v.acc}</p></div>`).join('');
-  document.getElementById('gamesList').innerHTML=games.map(g=>`<div class="card-bg rounded-xl p-3"><p class="text-xs font-bold">${g.title}</p><a href="${g.link}" target="_blank" class="text-[10px] bg-white text-black px-3 py-1 rounded-full inline-block mt-2">Cheza</a></div>`).join('')||'<p class="text-xs text-zinc-600">Hakuna games - Admin ongeza kwenye Akaunti</p>';
-  document.getElementById('betslips').innerHTML=games.map(g=>`<div class="card-bg rounded-xl p-3 flex justify-between items-center"><div><p class="text-sm font-bold">${g.title}</p><p class="text-[10px] text-zinc-500">${g.link}</p></div><div class="text-right"><p class="text-xs text-green-400">${g.wins}</p><div class="w-24 h-1 bg-zinc-800 rounded-full mt-1"><div class="h-1 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full" style="width:98%"></div></div></div></div>`).join('')||'';
-  document.getElementById('itList').innerHTML=its.map(i=>`<div class="card-bg rounded-xl p-3 flex justify-between"><div><p class="text-sm font-bold">${i.title}</p><p class="text-xs text-zinc-500">${i.link}</p></div></div>`).join('');
-  document.getElementById('gamblingList').innerHTML=gambles.map(g=>`<div class="card-bg rounded-xl p-3 border border-yellow-500/20"><p class="text-xs font-bold text-yellow-400">${g.title}</p><div class="bg-black p-2 rounded mt-2 font-mono text-green-400 text-xs">${g.code}</div></div>`).join('');
-  document.getElementById('minesCode').innerText=gambles.filter(x=>x.title.toLowerCase().includes('mines')).map(x=>x.code).join(' | ')||'3,7,12 SAFE';
-  document.getElementById('aviatorCode').innerText=gambles.filter(x=>x.title.toLowerCase().includes('aviator')).map(x=>x.code).join(' | ')||'2.45x CASHOUT 1.8x';
-  document.getElementById('totalUsers').innerText=users.length;document.getElementById('totalGames').innerText=games.length;document.getElementById('totalPhone').innerText=users.length;
-}
+function renderAll(){document.getElementById('vipList').innerHTML=vips.map(v=>`<div class="card-bg rounded-2xl p-3 min-w-[100px] text-center"><div class="w-12 h-12 bg-zinc-800 rounded-full mx-auto flex items-center justify-center font-black text-xs">${v.name[0]}</div><p class="text-[10px] font-bold mt-2">${v.name}</p><p class="text-[9px] text-green-400">${v.acc}</p></div>`).join('');document.getElementById('gamesList').innerHTML=games.map(g=>`<div class="card-bg rounded-xl p-3"><p class="text-xs font-bold">${g.title}</p><a href="${g.link}" target="_blank" class="text-[10px] bg-white text-black px-3 py-1 rounded-full inline-block mt-2">Cheza</a><p class="text-[9px] text-green-400 mt-1">${g.wins}</p></div>`).join('')||'<p class="text-xs text-zinc-600">Admin ongeza games kwenye Akaunti</p>';document.getElementById('betslips').innerHTML=games.map(g=>`<div class="card-bg rounded-xl p-3 flex justify-between items-center"><div><p class="text-sm font-bold">${g.title}</p></div><div class="text-right"><p class="text-xs text-green-400">${g.wins}</p><div class="w-20 h-1 bg-zinc-800 rounded-full mt-1"><div class="h-1 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full" style="width:98%"></div></div></div></div>`).join('');document.getElementById('gamblingList').innerHTML=gambles.map(g=>`<div class="card-bg rounded-xl p-3 border border-yellow-500/20"><p class="text-xs font-bold text-yellow-400">${g.title}</p><div class="bg-black p-2 rounded mt-2 font-mono text-green-400 text-xs">${g.code}</div></div>`).join('');document.getElementById('minesCode').innerText=gambles.filter(x=>x.title.toLowerCase().includes('mines')).map(x=>x.code).join(' | ')||'3,7,12 SAFE';document.getElementById('aviatorCode').innerText=gambles.filter(x=>x.title.toLowerCase().includes('aviator')).map(x=>x.code).join(' | ')||'2.45x';const tu=document.getElementById('totalUsers');if(tu){tu.innerText=users.length;document.getElementById('totalGames').innerText=games.length;document.getElementById('totalPhone').innerText=users.length;}}
 function renderUsers(){document.getElementById('usersDB').innerHTML=users.map(u=>`<div class="flex gap-2 items-center py-2 border-b border-zinc-800"><img src="${u.face}" class="w-8 h-8 rounded-full object-cover"><div class="flex-1"><p class="font-bold text-xs">${u.user}</p><p class="text-[10px] text-green-400">${u.phone}</p><p class="text-[9px] text-zinc-500">${u.date}</p></div><a href="https://wa.me/${u.phone.replace(/[^0-9]/g,'')}" target="_blank" class="bg-green-600 px-2 py-1 rounded-full text-[10px]">WA</a></div>`).join('')||'Hakuna';}
 function downloadNumbers(){let csv="Jina,Namba,Tarehe\n";users.forEach(u=>{csv+=`${u.user},${u.phone},${u.date}\n`;});const blob=new Blob([csv],{type:'text/csv'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='massey_numbers.csv';a.click();}
+function updateFace(){const v=document.getElementById('video2'),c=document.getElementById('canvas2');if(!v.srcObject)return alert('Washa camera');c.width=v.videoWidth;c.height=v.videoHeight;c.getContext('2d').drawImage(v,0,0);const nf=c.toDataURL('image/png');let cur=JSON.parse(localStorage.getItem('massey_current'));cur.face=nf;localStorage.setItem('massey_current',JSON.stringify(cur));users=users.map(u=>u.user===cur.user?cur:u);localStorage.setItem('massey_users',JSON.stringify(users));document.getElementById('profileFace').src=nf;alert('Picha imebadilishwa!');}
 function logout(){localStorage.removeItem('massey_current');location.reload();}
 if(currentUser)enterApp(currentUser);
 </script>
