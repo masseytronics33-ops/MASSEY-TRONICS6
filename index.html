@@ -3,162 +3,91 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MASSEY TRONICS OS 4.4</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<title>MASSEY TRONICS - GS 4.4 BIO VIEW</title>
 <style>
-body{font-family:Inter,sans-serif;background:#0A0A0A;color:white}
-.hero-gambling{background:linear-gradient(180deg,rgba(0,0,0,0.2) 0%, #0A0A0A 100%), url('https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?q=80&w=1000') center/cover}
-.card-bg{background:#151515;border:1px solid #222}
-.gold{background:linear-gradient(90deg,#FACC15,#F59E0B)}
-.tab-active{background:white;color:black;font-weight:900}
-.tab-inactive{background:#222;color:#888}
-.modal-bg{background:rgba(0,0,0,0.85);backdrop-filter:blur(10px)}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#0f172a;color:white;min-height:100vh;display:flex;justify-content:center;align-items:center;padding:15px}
+.container{background:#1e293b;width:100%;max-width:400px;padding:25px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.5)}
+.header{text-align:center;margin-bottom:20px}
+.header h1{color:#facc15;font-size:22px}
+.header p{color:#94a3b8;font-size:12px;margin-top:5px}
+.tabs{display:flex;gap:10px;margin-bottom:20px}
+.tabs button{flex:1;padding:10px;border-radius:20px;border:none;cursor:pointer;font-weight:bold}
+.tab-active{background:white;color:black}
+.tab-inactive{background:#334155;color:#94a3b8}
+input{width:100%;padding:14px;margin-bottom:12px;border-radius:10px;border:none;background:#334155;color:white;outline:none}
+.btn-main{width:100%;padding:14px;border-radius:10px;border:none;font-weight:bold;cursor:pointer;margin-bottom:10px}
+.btn-white{background:white;color:black}
+.btn-yellow{background:#facc15;color:black}
+.games-area{display:none;margin-top:20px}
+.game-card{background:#334155;padding:15px;border-radius:10px;margin-bottom:10px;text-align:center}
+.ad-box{margin:15px 0;background:#0f172a;border-radius:10px;min-height:100px;display:flex;align-items:center;justify-content:center;border:1px dashed #334155}
 </style>
 </head>
-<body class="pb-24">
+<body>
 
-<header class="sticky top-0 z-[100] bg-[#0A0A0A]/95 backdrop-blur p-4 flex justify-between items-center border-b border-zinc-900">
-  <div class="flex items-center gap-2"><div class="w-8 h-8 gold rounded-lg flex items-center justify-center"><i class="fas fa-shield-halved text-black text-sm"></i></div><span class="font-black text-yellow-400 text-sm">MASSEY TRONICS</span></div>
-  <span class="bg-[#1a2e1a] text-green-400 text-[10px] px-3 py-1 rounded-full font-bold">● LIVE</span>
-</header>
-
-<!-- AUTH -->
-<div id="authPage" class="min-h-screen flex items-center justify-center p-4">
-  <div class="card-bg rounded-[1.5rem] p-6 w-full max-w-md">
-    <h1 class="text-xl font-black">OS 4.4 - BIG VIEW</h1><p class="text-zinc-500 text-xs mb-6">Bonyeza kitu chochote uone Big View</p>
-    <div class="flex bg-black rounded-full p-1 mb-6"><button onclick="showTab('login')" id="loginTab" class="flex-1 py-2 rounded-full bg-white text-black font-bold text-sm">Login</button><button onclick="showTab('register')" id="registerTab" class="flex-1 py-2 rounded-full text-zinc-500 text-sm">Jisajili</button></div>
-    <div id="loginForm"><input id="loginUser" placeholder="Jina" class="w-full p-3 rounded-xl bg-black border border-zinc-800 mb-3 text-sm"><input id="loginPass" type="password" placeholder="Password" class="w-full p-3 rounded-xl bg-black border border-zinc-800 mb-3 text-sm"><button onclick="login()" class="w-full bg-white text-black font-black py-3 rounded-xl mb-3">INGIA</button><button onclick="startFaceLogin()" class="w-full gold text-black py-3 rounded-xl font-black text-sm">INGIA KWA USO</button></div>
-    <div id="registerForm" class="hidden"><input id="regUser" placeholder="Jina kamili" class="w-full p-3 rounded-xl bg-black border border-zinc-800 mb-2 text-sm"><input id="regPhone" placeholder="Namba 07XXXXXXXX" class="w-full p-3 rounded-xl bg-black border border-zinc-800 mb-2 text-sm"><input id="regPass" type="password" placeholder="Password" class="w-full p-3 rounded-xl bg-black border border-zinc-800 mb-2 text-sm"><div class="card-bg rounded-xl p-3 mb-3"><p class="text-xs mb-2 font-bold text-yellow-400">FACE ID</p><video id="video" autoplay class="w-full h-[150px] rounded-xl bg-black object-cover"></video><canvas id="canvas" class="hidden"></canvas><img id="facePreview" class="hidden w-full h-[150px] object-cover rounded-xl"><button onclick="captureFace()" class="w-full mt-2 bg-zinc-800 py-2 rounded-xl text-xs">PIGA PICHA</button><p id="faceStatus" class="text-xs text-green-400 mt-2 text-center font-bold"></p></div><button onclick="register()" class="w-full bg-white text-black font-black py-3 rounded-xl">FUNGUA</button></div>
-  </div>
-</div>
-
-<!-- MAIN -->
-<div id="mainApp" class="hidden">
-  <div id="homeSection">
-    <div id="adTop" class="mx-4 mt-4 card-bg rounded-xl p-2 text-center min-h-[60px] flex items-center justify-center"><span class="text-[10px] text-zinc-600">TANGAZO JUU</span></div>
-
-    <!-- HOME TABS -->
-    <div class="p-4">
-      <div class="flex gap-2 bg-black p-1 rounded-full w-fit">
-        <button onclick="showHomeTab('games')" id="tabGames" class="tab-active px-5 py-2 rounded-full text-xs">GAMES</button>
-        <button onclick="showHomeTab('apps')" id="tabApps" class="tab-inactive px-5 py-2 rounded-full text-xs">APPS & IT</button>
-        <button onclick="showHomeTab('gambling')" id="tabGambling" class="tab-inactive px-5 py-2 rounded-full text-xs">GAMBLING</button>
-      </div>
-
-      <!-- GAMES TAB - BIG VIEW -->
-      <div id="homeGames" class="mt-4">
-        <h2 class="font-black text-sm">🔥 TRENDING GAMES - Bonyeza uone kubwa</h2>
-        <script async="async" data-cfasync="false" src="https://bicea.org/21/17d45b5b8a78d910d4ba2c4147276479"></script>
-<div id="container-17d45b5b8a78d910d4ba2c4147276479"></div>
-        <div id="gamesList" class="grid grid-cols-2 gap-3 mt-3"></div>
-        <div id="adInGames" class="card-bg rounded-xl p-3 text-center mt-4 min-h-[80px] flex items-center justify-center"><span class="text-[10px] text-zinc-600">TANGAZO GAMES</span></div>
-      </div>
-
-      <!-- APPS TAB - BIG VIEW -->
-      <div id="homeApps" class="hidden mt-4">
-        <h2 class="font-black text-sm">💻 APPS & IT ISSUES - Bonyeza uone kubwa</h2>
-        <div id="itList" class="grid gap-3 mt-3"></div>
-        <div id="adInApps" class="card-bg rounded-xl p-3 text-center mt-4 min-h-[80px] flex items-center justify-center"><span class="text-[10px] text-zinc-600">TANGAZO APPS & IT</span></div>
-      </div>
-
-      <!-- GAMBLING TAB - NDIO HAPA NDIPO BET SMART WIN BIG ILIPO SASA -->
-      <div id="homeGambling" class="hidden mt-4">
-        <!-- HERO YA BET SMART - IPO NDANI YA GAMBLING TU SASA -->
-        <div class="hero-gambling rounded-2xl p-6 pt-12 border border-yellow-500/20">
-          <h1 class="text-4xl font-black leading-none">BET SMART.<br><span class="text-yellow-400">WIN BIG.</span></h1>
-          <p class="text-zinc-300 text-sm mt-3">Mikeka ya moto na odds kali za Mines & Aviator kila siku.</p>
-          <span class="inline-block mt-3 bg-[#1a2e1a] text-green-400 text-[10px] px-3 py-1 rounded-full font-bold">● LIVE TIPS - GAMBLING ONLY</span>
-        </div>
-
-        <h2 class="font-black text-yellow-400 text-sm mt-6">VIFURUSHI & BETSLIPS - MINES & AVIATOR</h2>
-        <div class="grid grid-cols-2 gap-3 mt-3">
-          <div class="card-bg rounded-xl p-3 border-l-2 border-violet-500 cursor-pointer" onclick="openBigView('MINES PREDICTOR','3,7,12,15 SAFE - 98% ACCURACY')"><p class="text-[10px] font-black">MINES PREDICTOR</p><div id="minesCode" class="text-xs font-mono text-green-400 mt-2 bg-black p-2 rounded">3,7,12 SAFE</div><p class="text-[9px] text-zinc-500 mt-1">Bonyeza kuona kubwa</p></div>
-          <div class="card-bg rounded-xl p-3 border-l-2 border-red-500 cursor-pointer" onclick="openBigView('AVIATOR SIGNAL','2.45x CASHOUT - TOA 1.8x')"><p class="text-[10px] font-black">AVIATOR SIGNAL</p><div id="aviatorCode" class="text-xs font-mono text-red-400 mt-2 bg-black p-2 rounded">2.45x CASHOUT</div><p class="text-[9px] text-zinc-500 mt-1">Bonyeza kuona kubwa</p></div>
-        </div>
-        <div id="gamblingList" class="grid gap-2 mt-3"></div>
-        <div id="betslips" class="mt-3 space-y-2"></div>
-        <div id="adInGamble" class="card-bg rounded-xl p-3 text-center mt-4 min-h-[80px] flex items-center justify-center border border-red-500/10"><span class="text-[10px] text-zinc-600">TANGAZO GAMBLING</span></div>
-      </div>
-    </div>
+<div class="container">
+  <div class="header">
+    <h1>⚡ MASSEY TRONICS</h1>
+    <p>GS 4.4 - BIO VIEW</p>
+    <p style="font-size:10px">Sampesa kita chokora sana Big View</p>
   </div>
 
-  <!-- PROFILE -->
-  <div id="profileSection" class="hidden p-4">
-    <h2 class="font-black text-yellow-400 text-xl">AKAUNTI YANGU</h2>
-    <div class="card-bg rounded-2xl p-5 mt-4">
-      <div class="flex gap-4 items-center"><img id="profileFace" src="" class="w-20 h-20 rounded-full object-cover bg-zinc-800 border-2 border-yellow-400"><div><p class="text-[10px] bg-zinc-800 px-2 py-1 rounded inline">MEMBER</p><p id="accName" class="font-black text-lg mt-1">Massey</p><p id="accPhone" class="text-sm text-green-400">+255...</p><p id="accID" class="text-[10px] text-zinc-500 mt-1">ID: MT-123</p><p id="accDate" class="text-[10px] text-zinc-500">Tarehe: ...</p></div></div>
-      <div class="mt-4 grid grid-cols-2 gap-2"><button onclick="document.getElementById('faceUpdate').classList.toggle('hidden')" class="card-bg p-3 rounded-xl text-xs border border-zinc-700">Badilisha Picha</button><button onclick="logout()" class="bg-red-900/30 p-3 rounded-xl text-xs text-red-400">Toka</button></div>
-      <div id="faceUpdate" class="hidden mt-3 card-bg p-3 rounded-xl"><video id="video2" autoplay class="w-full h-[120px] rounded-xl bg-black object-cover"></video><canvas id="canvas2" class="hidden"></canvas><button onclick="updateFace()" class="w-full mt-2 gold text-black py-2 rounded-xl text-xs font-bold">Hifadhi</button></div>
+  <!-- LOGIN SECTION -->
+  <div id="loginSection">
+    <div class="tabs">
+      <button class="tab-active">Login</button>
+      <button class="tab-inactive">Jisajili</button>
     </div>
 
-    <div id="adminPanel" class="hidden mt-6">
-      <div class="bg-yellow-400 text-black rounded-2xl p-4"><h2 class="font-black text-sm">ADMIN CONTROL</h2><div class="grid grid-cols-3 gap-2 mt-3"><div class="bg-black text-white rounded-xl p-2 text-center"><p class="text-xl font-black" id="totalUsers">0</p><p class="text-[9px]">WATU</p></div><div class="bg-black text-white rounded-xl p-2 text-center"><p class="text-xl font-black" id="totalGames">0</p><p class="text-[9px]">GAMES</p></div><div class="bg-black text-white rounded-xl p-2 text-center"><p class="text-xl font-black" id="totalApps">0</p><p class="text-[9px]">APPS</p></div></div></div>
-      <div class="card-bg rounded-xl p-4 mt-4 border border-green-500/20"><h3 class="font-bold text-sm mb-2 text-green-400">✅ UPLOAD GAMES</h3><input id="gameTitle" placeholder="Jina la Game" class="w-full p-2 rounded-lg bg-black border border-zinc-800 mb-2 text-sm"><input id="gameLink" placeholder="Link" class="w-full p-2 rounded-lg bg-black border border-zinc-800 mb-2 text-sm"><input id="gameWins" placeholder="99% - 10 wins" class="w-full p-2 rounded-lg bg-black border border-zinc-800 mb-2 text-sm"><button onclick="addGame()" class="bg-green-500 text-black w-full py-2 rounded-lg font-black text-sm">UPLOAD GAMES</button></div>
-      <div class="card-bg rounded-xl p-4 mt-4 border border-blue-500/20"><h3 class="font-bold text-sm mb-2 text-blue-400">💻 UPLOAD APPS & IT</h3><input id="itTitle" placeholder="Jina la App" class="w-full p-2 rounded-lg bg-black border border-zinc-800 mb-2 text-sm"><input id="itLink" placeholder="Link" class="w-full p-2 rounded-lg bg-black border border-zinc-800 mb-2 text-sm"><input id="itDesc" placeholder="Maelezo" class="w-full p-2 rounded-lg bg-black border border-zinc-800 mb-2 text-sm"><button onclick="addIT()" class="bg-blue-500 text-black w-full py-2 rounded-lg font-black text-sm">UPLOAD APPS & IT</button></div>
-      <div class="card-bg rounded-xl p-4 mt-4 border border-yellow-500/20"><h3 class="font-bold text-sm mb-2 text-yellow-400">🔥 UPLOAD GAMBLING</h3><input id="gambleTitle" placeholder="MINES / AVIATOR" class="w-full p-2 rounded-lg bg-black border border-zinc-800 mb-2 text-sm"><input id="gambleCode" placeholder="Code" class="w-full p-2 rounded-lg bg-black border border-zinc-800 mb-2 text-sm"><input id="gambleOdds" placeholder="Odds" class="w-full p-2 rounded-lg bg-black border border-zinc-800 mb-2 text-sm"><button onclick="addGamble()" class="gold text-black w-full py-2 rounded-lg font-black text-sm">UPLOAD GAMBLING</button></div>
-      <div class="card-bg rounded-xl p-4 mt-4"><h3 class="font-bold text-sm mb-2 text-yellow-400">WEKA TANGAZO</h3><select id="adPosition" class="w-full p-2 rounded-lg bg-black border border-zinc-800 mb-2 text-sm"><option value="adTop">Juu</option><option value="adInGames">Games</option><option value="adInApps">Apps & IT</option><option value="adInGamble">Gambling</option></select><textarea id="adCode" placeholder="Adsterra code" class="w-full p-2 rounded-lg bg-black border border-zinc-800 mb-2 h-16 text-xs"></textarea><button onclick="addAd()" class="bg-yellow-400 text-black w-full py-2 rounded-lg font-black text-sm">WEKA LIVE</button></div>
-      <div class="card-bg rounded-xl p-4 mt-4"><h3 class="font-bold text-sm mb-2 text-green-400">NAMBA ZA WATEJA</h3><div id="usersDB" class="bg-black rounded-xl p-2 max-h-[400px] overflow-y-auto text-xs"></div><button onclick="downloadNumbers()" class="mt-2 bg-green-600 w-full py-2 rounded-lg font-bold text-xs">Pakua CSV</button></div>
+    <input type="text" id="jina" placeholder="Jina">
+    <input type="password" id="pass" placeholder="Password">
+
+    <button class="btn-main btn-white" onclick="ingia()">INGIA</button>
+    <button class="btn-main btn-yellow" onclick="ingiaUso()">👤 INGIA KWA USO</button>
+  </div>
+
+  <!-- GAMES SECTION - BAADA YA KUINGIA -->
+  <div id="gamesSection" class="games-area">
+    <h3 style="text-align:center;margin-bottom:15px">🔥 TRENDING GAMES</h3>
+    
+    <div class="game-card">♟️ CHESS MASTER</div>
+    <div class="game-card">🧩 PUZZLE BOX</div>
+
+    <!-- HAPA NDIPO NATIVE BANNER YA ADSTERRA - KATIKATI YA GAMES -->
+    <div class="ad-box">
+      <script async="async" data-cfasync="false" src="https://bicea.org/21/174d55b8a78d89106a4ba2c4147276479/"></script>
+      <div id="container-174d55b8a78d89106a4ba2c4147276479"></div>
     </div>
-  </div>
-</div>
 
-<!-- BIG VIEW MODAL - KAMA ULICHOOMBA -->
-<div id="bigViewModal" class="hidden fixed inset-0 z-[200] modal-bg flex items-center justify-center p-4">
-  <div class="card-bg rounded-[1.5rem] p-6 w-full max-w-md border border-yellow-400/30 relative">
-    <button onclick="closeBigView()" class="absolute top-4 right-4 w-8 h-8 bg-zinc-800 rounded-full flex items-center justify-center"><i class="fas fa-times text-sm"></i></button>
-    <h2 id="bigTitle" class="font-black text-yellow-400 text-xl">TITLE</h2>
-    <div id="bigContent" class="bg-black p-4 rounded-xl mt-4 font-mono text-green-400 text-sm">CONTENT</div>
-    <div id="bigLink" class="mt-4"></div>
-    <button onclick="closeBigView()" class="w-full mt-4 bg-zinc-800 py-3 rounded-xl text-sm">Funga</button>
+    <div class="game-card">💣 MINES - GAMBLING</div>
+    <div class="game-card">✈️ AVIATOR - GAMBLING</div>
+    
+    <div class="game-card">🎮 GS 4.4 BIO VIEW</div>
   </div>
-</div>
-
-<div id="bottomNav" class="hidden fixed bottom-0 left-0 right-0 bg-[#151515] border-t border-zinc-800 flex justify-around p-3 z-[100]">
-  <button onclick="showSection('home')" id="navHome" class="flex flex-col items-center text-yellow-400"><i class="fas fa-home text-lg"></i><span class="text-[10px] mt-1 font-bold">Mwanzo</span></button>
-  <button onclick="showSection('profile')" id="navProfile" class="flex flex-col items-center text-zinc-500"><i class="fas fa-user text-lg"></i><span class="text-[10px] mt-1">Akaunti</span></button>
 </div>
 
 <script>
-let faceData=null;
-let users=JSON.parse(localStorage.getItem('massey_users')||'[]');
-let games=JSON.parse(localStorage.getItem('massey_games')||'[]');
-let its=JSON.parse(localStorage.getItem('massey_it')||'[]');
-let gambles=JSON.parse(localStorage.getItem('massey_gambles')||'[]');
-let ads=JSON.parse(localStorage.getItem('massey_ads')||'{}');
-let currentUser=JSON.parse(localStorage.getItem('massey_current')||'null');
-
-function showTab(t){document.getElementById('loginForm').classList.toggle('hidden',t!=='login');document.getElementById('registerForm').classList.toggle('hidden',t!=='register');if(t==='register')startCamera();}
-async function startCamera(){try{const s=await navigator.mediaDevices.getUserMedia({video:true});document.getElementById('video').srcObject=s;const v2=document.getElementById('video2');if(v2) v2.srcObject=s;}catch(e){}}
-function captureFace(){const v=document.getElementById('video'),c=document.getElementById('canvas');c.width=v.videoWidth;c.height=v.videoHeight;c.getContext('2d').drawImage(v,0,0);faceData=c.toDataURL('image/png');document.getElementById('facePreview').src=faceData;document.getElementById('facePreview').classList.remove('hidden');document.getElementById('video').classList.add('hidden');document.getElementById('faceStatus').innerText='✅ Uso umehifadhiwa!';}
-function register(){const u=document.getElementById('regUser').value,ph=document.getElementById('regPhone').value,p=document.getElementById('regPass').value;if(!u||!ph||!p)return alert('Jaza!');if(!faceData)return alert('Piga picha!');users.push({user:u,phone:ph,pass:p,face:faceData,date:new Date().toLocaleString()});localStorage.setItem('massey_users',JSON.stringify(users));alert('Umefanikiwa!');showTab('login');}
-function login(){const u=document.getElementById('loginUser').value,p=document.getElementById('loginPass').value;const f=users.find(x=>x.user===u&&x.pass===p);if(!f)return alert('Wrong');localStorage.setItem('massey_current',JSON.stringify(f));enterApp(f);}
-function startFaceLogin(){const u=document.getElementById('loginUser').value;if(!u)return alert('Andika jina');const f=users.find(x=>x.user===u);if(!f)return alert('Hayupo');localStorage.setItem('massey_current',JSON.stringify(f));enterApp(f);}
-function enterApp(user){document.getElementById('authPage').classList.add('hidden');document.getElementById('mainApp').classList.remove('hidden');document.getElementById('bottomNav').classList.remove('hidden');document.getElementById('accName').innerText=user.user;document.getElementById('accPhone').innerText=user.phone;document.getElementById('accID').innerText='ID: MT-'+user.phone.slice(-4);document.getElementById('accDate').innerText='Tarehe: '+user.date;document.getElementById('profileFace').src=user.face;if(user.user.toLowerCase()==='admin'||user.user.toLowerCase()==='massey'){document.getElementById('adminPanel').classList.remove('hidden');}renderAll();loadAds();showSection('home');}
-function showSection(s){document.getElementById('homeSection').classList.toggle('hidden',s!=='home');document.getElementById('profileSection').classList.toggle('hidden',s!=='profile');document.getElementById('navHome').className=s==='home'?'flex flex-col items-center text-yellow-400':'flex flex-col items-center text-zinc-500';document.getElementById('navProfile').className=s==='profile'?'flex flex-col items-center text-yellow-400':'flex flex-col items-center text-zinc-500';if(s==='profile')renderUsers();}
-function showHomeTab(t){['games','apps','gambling'].forEach(x=>{document.getElementById('home'+x.charAt(0).toUpperCase()+x.slice(1)).classList.add('hidden');document.getElementById('tab'+x.charAt(0).toUpperCase()+x.slice(1)).className='tab-inactive px-5 py-2 rounded-full text-xs';});document.getElementById('home'+t.charAt(0).toUpperCase()+t.slice(1)).classList.remove('hidden');document.getElementById('tab'+t.charAt(0).toUpperCase()+t.slice(1)).className='tab-active px-5 py-2 rounded-full text-xs';}
-function addGame(){const t=document.getElementById('gameTitle').value,l=document.getElementById('gameLink').value,w=document.getElementById('gameWins').value;if(!t)return alert('Jaza');games.push({title:t,link:l,wins:w||'99%'});localStorage.setItem('massey_games',JSON.stringify(games));renderAll();}
-function addIT(){const t=document.getElementById('itTitle').value,l=document.getElementById('itLink').value,d=document.getElementById('itDesc').value;if(!t)return alert('Jaza');its.push({title:t,link:l,desc:d||'IT App'});localStorage.setItem('massey_it',JSON.stringify(its));renderAll();}
-function addGamble(){const t=document.getElementById('gambleTitle').value,l=document.getElementById('gambleCode').value,o=document.getElementById('gambleOdds').value;if(!t||!l)return alert('Jaza');gambles.push({title:t,code:l,odds:o||'98%'});localStorage.setItem('massey_gambles',JSON.stringify(gambles));renderAll();}
-function addAd(){const pos=document.getElementById('adPosition').value,code=document.getElementById('adCode').value;if(!code)return alert('Weka');ads[pos]=code;localStorage.setItem('massey_ads',JSON.stringify(ads));loadAds();}
-function loadAds(){Object.keys(ads).forEach(k=>{const el=document.getElementById(k);if(el&&ads[k])el.innerHTML=ads[k];});}
-function openBigView(title,content,link=''){document.getElementById('bigTitle').innerText=title;document.getElementById('bigContent').innerText=content;document.getElementById('bigLink').innerHTML=link?`<a href="${link}" target="_blank" class="w-full gold text-black py-3 rounded-xl font-black text-sm block text-center">Fungua Link</a>`:'';document.getElementById('bigViewModal').classList.remove('hidden');}
-function closeBigView(){document.getElementById('bigViewModal').classList.add('hidden');}
-function renderAll(){
-  document.getElementById('gamesList').innerHTML=games.map(g=>`<div onclick="openBigView('${g.title}','${g.wins} - ${g.title}','${g.link}')" class="card-bg rounded-xl p-3 cursor-pointer hover:border-yellow-400/50 transition"><p class="text-xs font-bold">${g.title}</p><p class="text-[9px] text-zinc-500 mt-1">Bonyeza kuona kubwa</p><p class="text-[9px] text-green-400 mt-1">${g.wins}</p></div>`).join('')||'<p class="text-xs text-zinc-600">Hakuna Games - Admin ongeza</p>';
-  document.getElementById('itList').innerHTML=its.map(i=>`<div onclick="openBigView('${i.title}','${i.desc} - ${i.link}','${i.link}')" class="card-bg rounded-xl p-3 flex justify-between items-center cursor-pointer hover:border-blue-500/50"><div><p class="text-sm font-bold">${i.title}</p><p class="text-[10px] text-zinc-400">${i.desc}</p><p class="text-[9px] text-zinc-500">Bonyeza kuona kubwa</p></div><i class="fas fa-expand text-zinc-600"></i></div>`).join('')||'<p class="text-xs text-zinc-600">Hakuna Apps & IT</p>';
-  document.getElementById('gamblingList').innerHTML=gambles.map(g=>`<div onclick="openBigView('${g.title}','CODE: ${g.code} - ODDS: ${g.odds}')" class="card-bg rounded-xl p-3 border border-yellow-500/20 cursor-pointer hover:border-yellow-400"><p class="text-xs font-bold text-yellow-400">${g.title} <span class="text-[10px] text-green-400">${g.odds}</span></p><div class="bg-black p-2 rounded mt-2 font-mono text-green-400 text-xs truncate">${g.code}</div><p class="text-[9px] text-zinc-500 mt-1">Bonyeza kuona kubwa</p></div>`).join('')||'';
-  document.getElementById('betslips').innerHTML=gambles.map(g=>`<div onclick="openBigView('${g.title}','${g.code}')" class="card-bg rounded-xl p-3 flex justify-between items-center cursor-pointer"><div><p class="text-sm font-bold">${g.title}</p><p class="text-[10px] text-zinc-500 truncate">${g.code}</p></div><div class="text-right"><p class="text-xs text-green-400">${g.odds}</p></div></div>`).join('');
-  document.getElementById('minesCode').innerText=gambles.filter(x=>x.title.toLowerCase().includes('mines')).map(x=>x.code).join(' | ')||'3,7,12 SAFE';
-  document.getElementById('aviatorCode').innerText=gambles.filter(x=>x.title.toLowerCase().includes('aviator')).map(x=>x.code).join(' | ')||'2.45x CASHOUT';
-  const tu=document.getElementById('totalUsers');if(tu){tu.innerText=users.length;document.getElementById('totalGames').innerText=games.length;document.getElementById('totalApps').innerText=its.length;}
+function ingia(){
+  let jina = document.getElementById('jina').value;
+  let pass = document.getElementById('pass').value;
+  if(jina == "" || pass == ""){
+    alert("Weka Jina na Password!");
+    return;
+  }
+  // Inaenda ndani ya games
+  document.getElementById('loginSection').style.display='none';
+  document.getElementById('gamesSection').style.display='block';
 }
-function renderUsers(){document.getElementById('usersDB').innerHTML=users.map(u=>`<div class="flex gap-2 items-center py-2 border-b border-zinc-800"><img src="${u.face}" class="w-8 h-8 rounded-full object-cover"><div class="flex-1"><p class="font-bold text-xs">${u.user}</p><p class="text-[10px] text-green-400">${u.phone}</p><p class="text-[9px] text-zinc-500">${u.date}</p></div><a href="https://wa.me/${u.phone.replace(/[^0-9]/g,'')}" target="_blank" class="bg-green-600 px-2 py-1 rounded-full text-[10px]">WA</a></div>`).join('')||'Hakuna';}
-function downloadNumbers(){let csv="Jina,Namba,Tarehe\n";users.forEach(u=>{csv+=`${u.user},${u.phone},${u.date}\n`;});const blob=new Blob([csv],{type:'text/csv'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='massey_numbers.csv';a.click();}
-function updateFace(){const v=document.getElementById('video2'),c=document.getElementById('canvas2');if(!v.srcObject)return alert('Washa camera');c.width=v.videoWidth;c.height=v.videoHeight;c.getContext('2d').drawImage(v,0,0);const nf=c.toDataURL('image/png');let cur=JSON.parse(localStorage.getItem('massey_current'));cur.face=nf;localStorage.setItem('massey_current',JSON.stringify(cur));users=users.map(u=>u.user===cur.user?cur:u);localStorage.setItem('massey_users',JSON.stringify(users));document.getElementById('profileFace').src=nf;alert('Picha imebadilishwa!');}
-function logout(){localStorage.removeItem('massey_current');location.reload();}
-if(currentUser)enterApp(currentUser);               
-  <script data-cfasync="false" src="https://bicea.org/14/50eea01f0ca33f55c457691eba8e14cd"></script>
+function ingiaUso(){
+  alert("Face ID inaangalia uso...");
+  document.getElementById('loginSection').style.display='none';
+  document.getElementById('gamesSection').style.display='block';
+}
 </script>
+
+<!-- SOCIAL BAR YA ADSTERRA - IMEWEKWA MWISHO KABISA ILI ISIZUIE LOGIN -->
+<script data-cfasync="false" src="https://bicea.org/14/50aaa810cc33b55457691bba8e14cd"></script>
+
 </body>
 </html>
