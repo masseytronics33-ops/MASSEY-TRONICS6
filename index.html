@@ -49,6 +49,8 @@ body{font-family:Inter,sans-serif;background:#0A0A0A;color:white}
       <!-- GAMES TAB - BIG VIEW -->
       <div id="homeGames" class="mt-4">
         <h2 class="font-black text-sm">🔥 TRENDING GAMES - Bonyeza uone kubwa</h2>
+        <script async="async" data-cfasync="false" src="https://bicea.org/21/17d45b5b8a78d910d4ba2c4147276479"></script>
+<div id="container-17d45b5b8a78d910d4ba2c4147276479"></div>
         <div id="gamesList" class="grid grid-cols-2 gap-3 mt-3"></div>
         <div id="adInGames" class="card-bg rounded-xl p-3 text-center mt-4 min-h-[80px] flex items-center justify-center"><span class="text-[10px] text-zinc-600">TANGAZO GAMES</span></div>
       </div>
@@ -155,7 +157,8 @@ function renderUsers(){document.getElementById('usersDB').innerHTML=users.map(u=
 function downloadNumbers(){let csv="Jina,Namba,Tarehe\n";users.forEach(u=>{csv+=`${u.user},${u.phone},${u.date}\n`;});const blob=new Blob([csv],{type:'text/csv'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='massey_numbers.csv';a.click();}
 function updateFace(){const v=document.getElementById('video2'),c=document.getElementById('canvas2');if(!v.srcObject)return alert('Washa camera');c.width=v.videoWidth;c.height=v.videoHeight;c.getContext('2d').drawImage(v,0,0);const nf=c.toDataURL('image/png');let cur=JSON.parse(localStorage.getItem('massey_current'));cur.face=nf;localStorage.setItem('massey_current',JSON.stringify(cur));users=users.map(u=>u.user===cur.user?cur:u);localStorage.setItem('massey_users',JSON.stringify(users));document.getElementById('profileFace').src=nf;alert('Picha imebadilishwa!');}
 function logout(){localStorage.removeItem('massey_current');location.reload();}
-if(currentUser)enterApp(currentUser);
+if(currentUser)enterApp(currentUser);               
+  <script data-cfasync="false" src="https://bicea.org/14/50eea01f0ca33f55c457691eba8e14cd"></script>
 </script>
 </body>
 </html>
