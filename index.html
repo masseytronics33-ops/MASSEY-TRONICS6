@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MASSEY TRONICS 4.6 FINAL</title>
+<title>MASSEY TRONICS 4.8 - ADSTERRA READY</title>
 <style>
 *{box-sizing:border-box} body{margin:0;background:#0a0f1e;color:#fff;font-family:Arial;padding-bottom:80px}
 .top{padding:12px;background:#0a0f1e;border-bottom:1px solid #1a233a;color:#ffc107;font-weight:bold;position:sticky;top:0;z-index:30;display:flex;justify-content:space-between}
@@ -17,16 +17,34 @@ video{width:100%;height:100%;object-fit:cover;display:none}
 .auth{display:flex;gap:8px} .a-btn{flex:1;padding:12px;border-radius:10px;border:0;font-weight:bold;cursor:pointer} .a-btn.on{background:#facc15;color:#000} .a-btn.off{background:#1a233a;color:#888}
 .main-nav{display:flex;gap:8px;padding:10px;position:sticky;top:45px;background:#0a0f1e;z-index:20} .m-tab{flex:1;padding:12px;border-radius:10px;border:0;font-weight:bold;cursor:pointer} .m-tab.active{background:#fff;color:#000} .m-tab.off{background:#1a233a;color:#888}
 .home-nav{display:flex;gap:6px;padding:10px;background:#0f172a;margin:10px;border-radius:10px;overflow-x:auto} .h-tab{padding:8px 16px;border-radius:20px;border:0;font-size:12px;font-weight:bold;white-space:nowrap;cursor:pointer} .h-tab.active{background:#facc15;color:#000} .h-tab.off{background:#1a233a;color:#aaa}
-.filter{display:flex;gap:6px;margin:10px 0;overflow-x:auto} .f-btn{padding:6px 14px;border-radius:15px;border:0;font-size:11px;cursor:pointer} .f-btn.active{background:#facc15;color:#000;font-weight:bold} .f-btn.off{background:#1e293b;color:#aaa}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:8px} .item{background:#0f172a;padding:12px;border-radius:10px;border:1px solid #1e293b;text-align:center}
-.ad-box{margin:10px;background:#0f172a;border:1px solid #222;padding:0;border-radius:12px;overflow:hidden;display:none}
 .admin-tabs{display:flex;gap:4px;margin:10px 0} .ad-tab{flex:1;padding:10px;border-radius:8px;border:0;font-size:11px;font-weight:bold;cursor:pointer} .ad-tab.on{background:#ff4444;color:#fff} .ad-tab.off{background:#1a233a;color:#aaa}
 .sticky-ad{position:fixed;bottom:0;left:0;right:0;background:#141d33;border-top:2px solid #facc15;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;z-index:99}
-.upload-box{background:#000;padding:12px;border-radius:10px;border:1px solid #facc15;margin-top:8px}
+.upload-box{background:#000;padding:12px;border-radius:10px;border:1px solid #333;margin-top:8px}
+
+/* ===== ADSTERRA BOX - HAPA NDIPO ADS ZITAKAPOONEKANA ===== */
+.adsterra-box{margin:10px;background:#111;padding:5px;border-radius:10px;border:1px dashed #facc15;text-align:center}
 </style>
+
+<!-- ========================================================= -->
+<!-- 🔴🔴🔴  ADSTERRA 1 - POPUNDER - WEKA CODE HAPA JUU  🔴🔴🔴 -->
+<!-- ========================================================= -->
+<!-- 
+1. Nenda adsterra.com
+2. Chukua Popunder code yako
+3. Bandika code yote hapa chini ya mstari huu
+4. Mfano wa code:
+<script type='text/javascript' src='//pl123456.highperformancegate.com/xx/yy/zzz.js'></script>
+-->
+<!-- HAPA NDIPO UNAWEKA POPUNDER - BANDIKA HAPA CHINI -->
+<!-- POPUNDER CODE ANZA HAPA -->
+
+<!-- POPUNDER CODE MWISHO HAPA -->
+<!-- ========================================================= -->
+
 </head>
 <body>
-<div class="top"><span>🟨 MASSEY TRONICS 4.6</span><span id="topName" style="color:#fff;font-size:11px"></span></div>
+<div class="top"><span>🟨 MASSEY TRONICS 4.8</span><span id="topName" style="color:#fff;font-size:11px"></span></div>
 
 <div id="authPage"><div class="card">
 <div class="auth">
@@ -34,10 +52,10 @@ video{width:100%;height:100%;object-fit:cover;display:none}
 <button class="a-btn off" id="bLog" onclick="window.switchAuth('login')">🔐 LOGIN</button>
 </div>
 <div id="signupPage" style="margin-top:12px">
-<div style="color:#facc15;font-weight:bold">✅ KUFUNGUA ACCOUNT - FACE ID</div>
-<input id="sName" placeholder="Jina - Andika MASSEY uwe ADMIN">
+<div style="color:#facc15;font-weight:bold">✅ KUFUNGUA ACCOUNT</div>
+<input id="sName" placeholder="Jina - MASSEY uwe ADMIN">
 <input id="sPhone" placeholder="Namba 255...">
-<div class="face-area"><div class="face-box" id="fb1"><div id="ph1" style="color:#666;font-size:12px">Bonyeza START CAMERA</div><video id="v1" autoplay playsinline></video><div class="face-overlay" id="ov1" style="display:none"></div></div><div id="st1" style="font-size:11px;color:#22c55e;margin-top:6px;display:none"></div></div>
+<div class="face-area"><div class="face-box" id="fb1"><div id="ph1" style="color:#666;font-size:12px">Bonyeza START CAMERA</div><video id="v1" autoplay playsinline></video><div class="face-overlay" id="ov1" style="display:none"></div></div></div>
 <button class="btn" onclick="window.startCamera(1)" id="c1">📷 START CAMERA</button>
 <button class="btn" onclick="window.capture(1)" id="t1" style="display:none;background:#22c55e">📸 CAPTURE</button>
 <button class="btn" onclick="window.signup()" style="background:#fff">FUNGUA ACCOUNT</button>
@@ -45,7 +63,7 @@ video{width:100%;height:100%;object-fit:cover;display:none}
 <div id="loginPage" style="display:none;margin-top:12px">
 <div style="color:#22c55e;font-weight:bold">🔐 LOGIN</div>
 <input id="lPhone" placeholder="Namba 255...">
-<div class="face-area"><div class="face-box" id="fb2"><div id="ph2" style="color:#666;font-size:12px">Bonyeza SCAN</div><video id="v2" autoplay playsinline></video><div class="face-overlay" id="ov2" style="display:none"></div></div><div id="st2" style="font-size:11px;color:#22c55e;display:none"></div></div>
+<div class="face-area"><div class="face-box" id="fb2"><div id="ph2" style="color:#666">Bonyeza SCAN</div><video id="v2" autoplay playsinline></video><div class="face-overlay" id="ov2" style="display:none"></div></div></div>
 <button class="btn" onclick="window.startCamera(2)" id="c2">📷 START SCAN</button>
 <button class="btn" onclick="window.capture(2)" id="t2" style="display:none;background:#22c55e">📸 SCAN</button>
 <button class="btn" onclick="window.login()" style="background:#22c55e">INGIA</button>
@@ -60,8 +78,36 @@ video{width:100%;height:100%;object-fit:cover;display:none}
 </div>
 
 <div id="home" class="mainSec">
-<!-- ADS CONTAINER - HAKUNA MAANDISHI YA TANGAZA - INAONEKANA TU UKIWEKA ADS -->
-<div class="ad-box" id="adBoxTop"><div id="topAdContainer"></div></div>
+
+<!-- ========================================================= -->
+<!-- 🟡🟡🟡  ADSTERRA 2 - BANNER JUU - HAPA NDIPO KWENYE PICHA YAKO 🟡🟡🟡 -->
+<!-- ========================================================= -->
+<div class="adsterra-box" id="adBoxTop">
+<div style="font-size:9px;color:#666;margin-bottom:4px">ADSTERRA 2 - BANNER JUU 320x50 - HAPA NDIPO Kwenye laptop yako - juu ya GAMES</div>
+<div id="topAdContainer">
+
+<!-- 🔴 WEKA CODE YAKO YA ADSTERRA BANNER HAPA CHINI 🔴 -->
+<!-- HAPA HAPA - BANDIKA CODE YOTE YA BANNER -->
+<!-- MFANO WA CODE UTAKAYOPEWA NA ADSTERRA:
+<script type="text/javascript">
+  atOptions = {
+    'key' : 'abcd1234efgh5678',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/abcd1234efgh5678/invoke.js"></script>
+-->
+<!-- 👆 BANDIKA CODE HAPO JUU 👆 -->
+
+<!-- KABLA HUJAWEKA KEY, HAKUNA KITU KITAONEKANA HAPA - NI SAFI KAMA KWENYE PICHA YAKO -->
+</div>
+</div>
+<!-- ========================================================= -->
+<!-- MWISHO WA ADSTERRA 2 -->
+<!-- ========================================================= -->
 
 <div class="home-nav">
 <button class="h-tab active" id="hGames" onclick="window.homeTab('games')">GAMES</button>
@@ -69,60 +115,65 @@ video{width:100%;height:100%;object-fit:cover;display:none}
 <button class="h-tab off" id="hGamb" onclick="window.homeTab('gamb')">GAMBLING</button>
 </div>
 
-<div id="games" class="homeSec"><div class="card"><div class="filter"><button class="f-btn active" onclick="window.filterGames('all',this)">ALL</button><button class="f-btn off" onclick="window.filterGames('football',this)">FOOTBALL ⚽</button><button class="f-btn off" onclick="window.filterGames('action',this)">ACTION 🔥</button><button class="f-btn off" onclick="window.filterGames('sports',this)">SPORTS</button></div><div class="grid" id="gGrid"></div></div></div>
+<div id="games" class="homeSec"><div class="card"><div class="grid" id="gGrid"></div></div></div>
 <div id="it" class="homeSec" style="display:none"><div class="card" id="itGrid"></div></div>
 <div id="gamb" class="homeSec" style="display:none"><div class="card" id="gambGrid"></div></div>
+
+<!-- ========================================================= -->
+<!-- 🟢🟢🟢  ADSTERRA 3 - NATIVE BANNER KATI YA GAMES 🟢🟢🟢 -->
+<!-- ========================================================= -->
+<div class="adsterra-box">
+<div style="font-size:9px;color:#666">ADSTERRA 3 - NATIVE 300x250 - KATI YA GAMES</div>
+<div id="nativeAd">
+
+<!-- 🔴 WEKA CODE YA NATIVE BANNER HAPA 🔴 -->
+<!-- BANDIKA CODE HAPA CHINI -->
+
+<!-- MWISHO WA NATIVE -->
+
+</div>
 </div>
 
-<div id="profile" class="mainSec" style="display:none"><div class="card" style="text-align:center"><img id="pImg" style="width:90px;height:90px;border-radius:50%;border:3px solid #facc15;object-fit:cover"><div id="pName" style="font-weight:bold;margin-top:10px"></div><div id="pPhone" style="font-size:11px;color:#aaa"></div><div style="font-size:12px;margin-top:8px;background:#0a0f1e;padding:8px;border-radius:8px">Ads Zangu: <b id="adCount">0</b> | Mapato: TZS <b id="income">0</b></div><button class="btn" style="background:#ff4444;color:#fff;margin-top:12px" onclick="window.logout()">LOGOUT</button></div></div>
+</div>
+
+<div id="profile" class="mainSec" style="display:none"><div class="card" style="text-align:center"><img id="pImg" style="width:90px;height:90px;border-radius:50%;border:3px solid #facc15;object-fit:cover"><div id="pName" style="font-weight:bold;margin-top:10px"></div><div id="pPhone" style="font-size:11px;color:#aaa"></div><button class="btn" style="background:#ff4444;color:#fff;margin-top:12px" onclick="window.logout()">LOGOUT</button></div></div>
 
 <div id="admin" class="mainSec" style="display:none"><div class="card">
-<div style="color:#ff4444;font-weight:bold;font-size:14px">📤 ADMIN UPLOAD - WEWE PEKEE</div>
-<div style="font-size:10px;color:#888;margin-bottom:8px">Watu wengine hawaoni hii - ni yako tu kama MASSEY</div>
-
+<div style="color:#ff4444;font-weight:bold">📤 ADMIN - WEWE PEKEE</div>
 <div class="admin-tabs">
 <button class="ad-tab on" id="tabG" onclick="window.adminTab('games')">GAMES</button>
 <button class="ad-tab off" id="tabI" onclick="window.adminTab('it')">IT</button>
 <button class="ad-tab off" id="tabGa" onclick="window.adminTab('gamb')">GAMB</button>
-<button class="ad-tab off" id="tabAd" onclick="window.adminTab('ads')">💰 ADS - ANZA HAPA</button>
+<button class="ad-tab off" id="tabAd" onclick="window.adminTab('ads')">💰 ADS ZAKO</button>
 </div>
 
-<div id="adGames" class="upload-box">
-<div style="color:#facc15;font-size:12px;font-weight:bold;margin-bottom:6px">WEKA GAME MPYA</div>
-<input id="adName" placeholder="Jina - eFootball 2025"><input id="adPrice" placeholder="Bei - TZS 3000"><select id="adCat"><option value="football">FOOTBALL</option><option value="action">ACTION</option><option value="sports">SPORTS</option><option value="all">ALL</option></select><button class="btn" onclick="window.uploadGame()">➕ WEKA GAME</button>
-</div>
-
-<div id="adIt" class="upload-box" style="display:none">
-<div style="color:#facc15;font-size:12px;font-weight:bold;margin-bottom:6px">WEKA IT ISSUE</div>
-<input id="itName" placeholder="Windows 11 Pro"><input id="itPrice" placeholder="TZS 15000"><button class="btn" onclick="window.uploadIt()">➕ WEKA IT</button>
-</div>
-
-<div id="adGamb" class="upload-box" style="display:none">
-<div style="color:#facc15;font-size:12px;font-weight:bold;margin-bottom:6px">WEKA GAMBLING</div>
-<input id="gName" placeholder="Simba vs Yanga"><input id="gOdds" placeholder="Odds - 1.85 | 3.20"><input id="gTime" placeholder="Muda - Leo 19:00"><button class="btn" onclick="window.uploadGamb()">➕ WEKA GAMBLING</button>
-</div>
-
-<div id="adAds" class="upload-box" style="display:none;border-color:#22c55e;border-width:2px">
-<div style="color:#22c55e;font-size:13px;font-weight:bold;margin-bottom:8px">💰 WEKA TANGAZO - PESA PAPO HAPO</div>
-<input id="adsTitle" placeholder="1. Jina la Biashara - Mfano: Duka la Simu Igoma">
-<input id="adsDesc" placeholder="2. Maelezo - Mfano: Battery Original 15,000/=">
-<input id="adsLink" placeholder="3. Link ya WhatsApp - https://wa.me/2557XXXXXXX">
-<input id="adsPay" placeholder="4. Alichokulipa - Mfano: 20000">
-<select id="adsPos"><option value="top">📍 JUU YA HOME (Inaonekana sana - Bei kubwa)</option><option value="sticky">📍 CHINI STICKY (Inafuata mtu)</option></select>
-<button class="btn" style="background:#22c55e;color:#fff;font-size:15px;padding:15px" onclick="window.uploadAds()">💰 WEKA TANGAZO SASA - ANZA KULIPWA</button>
-<div style="font-size:10px;color:#aaa;margin-top:8px">Ukibonyeza hapa, tangazo litaonekana mara moja kwa wateja wote HOME - Hakuna TANGAZA BIASHARA tena!</div>
-</div>
-
-<div id="adStatus" style="font-size:13px;color:#22c55e;margin-top:12px;display:none;padding:12px;background:#0a0f1e;border-radius:8px;border:1px solid #22c55e"></div>
+<div id="adGames" class="upload-box"><input id="adName" placeholder="Game"><input id="adPrice" placeholder="TZS 3000"><select id="adCat"><option value="football">FOOTBALL</option><option value="action">ACTION</option><option value="sports">SPORTS</option><option value="all">ALL</option></select><button class="btn" onclick="window.uploadGame()">➕ WEKA GAME</button></div>
+<div id="adIt" class="upload-box" style="display:none"><input id="itName" placeholder="Windows 11"><input id="itPrice" placeholder="15000"><button class="btn" onclick="window.uploadIt()">➕ WEKA IT</button></div>
+<div id="adGamb" class="upload-box" style="display:none"><input id="gName" placeholder="Simba vs Yanga"><input id="gOdds" placeholder="1.85"><input id="gTime" placeholder="Leo 19:00"><button class="btn" onclick="window.uploadGamb()">➕ WEKA GAMB</button></div>
+<div id="adAds" class="upload-box" style="display:none;border-color:#22c55e"><input id="adsTitle" placeholder="Biashara"><input id="adsDesc" placeholder="Maelezo"><input id="adsLink" placeholder="wa.me/..."><input id="adsPay" placeholder="20000"><select id="adsPos"><option value="top">JUU</option><option value="sticky">CHINI</option></select><button class="btn" style="background:#22c55e" onclick="window.uploadAds()">💰 WEKA ADS YAKO</button></div>
+<div id="adStatus" style="font-size:12px;color:#22c55e;margin-top:10px;display:none"></div>
 <div id="adminList" style="margin-top:12px;font-size:11px"></div>
 </div></div>
 </div>
 
 <div id="stickyAd" class="sticky-ad" style="display:none"><div style="flex:1"><div style="font-size:13px;font-weight:bold;color:#facc15" id="stickyTitle"></div><div style="font-size:11px;color:#aaa" id="stickyDesc"></div></div><div style="display:flex;gap:6px"><a id="stickyLink" href="#" target="_blank" style="background:#facc15;color:#000;padding:8px 14px;border-radius:20px;font-size:12px;font-weight:bold;text-decoration:none">ONA</a><button onclick="document.getElementById('stickyAd').style.display='none'" style="background:#333;color:#fff;border:0;padding:8px 10px;border-radius:50%">X</button></div></div>
 
+<!-- ========================================================= -->
+<!-- 🔵🔵🔵  ADSTERRA 4 - SOCIAL BAR - CHINI KABISA - INAFUATA MTU 🔵🔵🔵 -->
+<!-- ========================================================= -->
+<!-- 
+HII NDIO INALIPA SANA $3 CPM - INAFUATA MTU KILA MAHALI
+Nenda Adsterra -> Social Bar -> Copy Code -> Bandika hapa chini
+-->
+<!-- SOCIAL BAR CODE ANZA HAPA -->
+<!-- WEKA CODE YA SOCIAL BAR HAPA CHINI -->
+
+<!-- SOCIAL BAR CODE MWISHO HAPA -->
+<!-- ========================================================= -->
+
 <script>
 window.fd1=null; window.fd2=null; window.db=null; window.stream=null;
-let req=indexedDB.open("MASSEY_FINAL_46_CLEAN",1);
+let req=indexedDB.open("MASSEY_FINAL_48_ADSTERRA",1);
 req.onupgradeneeded=function(e){
   let d=e.target.result;
   d.createObjectStore("accounts",{keyPath:"phone"});
@@ -132,7 +183,6 @@ req.onupgradeneeded=function(e){
   d.createObjectStore("ads",{autoIncrement:true});
 };
 req.onsuccess=function(e){ window.db=e.target.result; window.loadAll(); };
-
 window.startCamera=async function(n){
   try{
     let v=document.getElementById('v'+n);
@@ -142,11 +192,11 @@ window.startCamera=async function(n){
     document.getElementById('ov'+n).style.display='block';
     document.getElementById('c'+n).style.display='none';
     document.getElementById('t'+n).style.display='block';
-  }catch(err){ alert('Camera: Fungua kwa http://localhost:8000 - '+err.message); }
+  }catch(err){ alert('Camera: http://localhost:8000 - '+err.message); }
 };
 window.capture=function(n){
   let v=document.getElementById('v'+n);
-  if(v.videoWidth==0){ alert('Subiri 2sec'); return; }
+  if(v.videoWidth==0){ alert('Subiri'); return; }
   let c=document.createElement('canvas'); c.width=v.videoWidth; c.height=v.videoHeight;
   c.getContext('2d').drawImage(v,0,0);
   let data=c.toDataURL('image/jpeg',0.7);
@@ -156,7 +206,7 @@ window.capture=function(n){
 };
 window.signup=function(){
   let name=document.getElementById('sName').value, phone=document.getElementById('sPhone').value;
-  if(!name||!phone||!window.fd1){ alert('Jaza zote na piga picha'); return; }
+  if(!name||!phone||!window.fd1){ alert('Jaza zote'); return; }
   let isAdmin=name.toLowerCase().includes('massey');
   window.db.transaction("accounts","readwrite").objectStore("accounts").put({name,phone,face:window.fd1,isAdmin}).onsuccess=function(){ localStorage.setItem('cur',phone); location.reload(); };
 };
@@ -199,71 +249,33 @@ window.uploadGamb=function(){
 };
 window.uploadAds=function(){
   let title=document.getElementById('adsTitle').value, desc=document.getElementById('adsDesc').value, link=document.getElementById('adsLink').value, pay=document.getElementById('adsPay').value, pos=document.getElementById('adsPos').value;
-  if(!title){ alert('Andika Jina la Biashara'); return; }
+  if(!title){ alert('Jina'); return; }
   if(!pay) pay="20000";
   let tx=window.db.transaction("ads","readwrite");
   tx.objectStore("ads").add({title,desc,link,pay,pos,time:Date.now()});
   tx.oncomplete=function(){
-    let s=document.getElementById('adStatus');
-    s.style.display='block';
-    s.innerHTML='✅ IMEFANIKIWA! Tangazo "'+title+'" limewekwa! UMEIPATA TZS '+pay+'<br><br>👉 Nenda HOME uone - hiyo orange ya TANGAZA BIASHARA haipo tena - ni tangazo lako sasa!';
-    document.getElementById('adsTitle').value=''; document.getElementById('adsDesc').value=''; document.getElementById('adsPay').value=''; document.getElementById('adsLink').value='';
-    window.loadAll();
-    window.mainTab('home');
+    let s=document.getElementById('adStatus'); s.style.display='block'; s.innerHTML='✅ '+title+' imewekwa TZS '+pay; window.loadAll(); window.mainTab('home');
   };
 };
-window.ok=function(m){
-  let s=document.getElementById('adStatus'); s.style.display='block'; s.innerHTML='✅ '+m+' imewekwa!'; window.loadAll();
-  setTimeout(function(){ s.style.display='none'; },4000);
-};
+window.ok=function(m){ let s=document.getElementById('adStatus'); s.style.display='block'; s.innerHTML='✅ '+m+' imewekwa!'; window.loadAll(); };
 window.loadAll=function(){
   if(!window.db) return;
   window.db.transaction("games","readonly").objectStore("games").getAll().onsuccess=function(e){
     let g=e.target.result;
-    document.getElementById('gGrid').innerHTML=g.length?g.map(function(x){ return '<div class="item"><b>'+x.name+'</b><br><small>'+x.price+'</small><br><small style="color:#facc15">'+x.cat.toUpperCase()+'</small></div>'; }).join(''):'<div style="grid-column:1/3;text-align:center;color:#555;padding:20px">Hakuna Games - Wewe ADMIN weka</div>';
-  };
-  window.db.transaction("it","readonly").objectStore("it").getAll().onsuccess=function(e){
-    let d=e.target.result;
-    document.getElementById('itGrid').innerHTML=d.length?d.map(function(x){ return '<div style="padding:10px;border-bottom:1px solid #222"><b>'+x.name+'</b><br><small style="color:#facc15">'+x.price+'</small></div>'; }).join(''):'<div style="color:#555">Hakuna IT</div>';
-  };
-  window.db.transaction("gamb","readonly").objectStore("gamb").getAll().onsuccess=function(e){
-    let d=e.target.result;
-    let header='<div style="background:linear-gradient(to right,#0a0f1e 40%,transparent), url(\'https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?w=900\') center/cover;padding:35px 20px;border-radius:12px;margin-bottom:10px"><h1 style="margin:0">BET SMART,<br><span style="color:#facc15">WIN BIG.</span></h1></div>';
-    let list=d.length?d.map(function(x){ return '<div style="border:1px solid #facc15;padding:10px;border-radius:10px;margin-bottom:8px;background:#0f172a"><b>'+x.name+'</b><br><small style="color:#facc15">'+x.price+'</small></div>'; }).join(''):'<div style="color:#555">Hakuna Gambling</div>';
-    document.getElementById('gambGrid').innerHTML=header+list;
+    document.getElementById('gGrid').innerHTML=g.length?g.map(function(x){ return '<div class="item"><b>'+x.name+'</b><br><small>'+x.price+'</small><br><small style="color:#facc15">'+x.cat.toUpperCase()+'</small></div>'; }).join(''):'<div style="grid-column:1/3;text-align:center;color:#555;padding:20px">Hakuna Games - ADMIN weka</div>';
   };
   window.db.transaction("ads","readonly").objectStore("ads").getAll().onsuccess=function(e){
     let ads=e.target.result;
     let box=document.getElementById('adBoxTop');
-    let container=document.getElementById('topAdContainer');
     if(ads.length>0){
-      box.style.display='block';
+      box.style.display='block'; box.style.borderStyle='solid';
       let topAd=ads.find(function(a){ return a.pos=='top'; })||ads[0];
-      container.innerHTML='<a href="'+topAd.link+'" target="_blank" style="text-decoration:none"><div style="background:#facc15;color:#000;padding:14px;border-radius:10px;font-weight:bold;text-align:left"><div style="font-size:13px">'+topAd.title+'</div><div style="font-size:11px;font-weight:normal;margin-top:4px">'+topAd.desc+'</div><div style="font-size:10px;background:#000;color:#facc15;padding:4px 10px;border-radius:15px;display:inline-block;margin-top:6px">TZS '+topAd.pay+' - BON YEZA HAPA</div></div></a>';
-      let sticky=ads.find(function(a){ return a.pos=='sticky'; })||ads[ads.length-1];
-      if(sticky){
-        document.getElementById('stickyAd').style.display='flex';
-        document.getElementById('stickyTitle').innerText=sticky.title;
-        document.getElementById('stickyDesc').innerText=sticky.desc;
-        document.getElementById('stickyLink').href=sticky.link;
-      }
-      let total=ads.reduce(function(s,a){ return s+(parseInt((a.pay||'0').replace(/[^0-9]/g,''))||0); },0);
-      document.getElementById('adCount').innerText=ads.length;
-      document.getElementById('income').innerText=total.toLocaleString();
-      document.getElementById('adminList').innerHTML='<div style="color:#facc15;font-weight:bold;margin-top:10px">💰 ADS ZILIZO Wekwa ('+ads.length+'):</div>'+ads.map(function(a,i){ return '<div style="border-bottom:1px solid #222;padding:6px 0">'+(i+1)+'. <b>'+a.title+'</b> - TZS '+a.pay+' - '+a.pos+' <span style="color:#ff4444;cursor:pointer" onclick="window.deleteAd('+a.id+')">[FUTA]</span></div>'; }).join('');
-    }else{
-      box.style.display='none';
-      document.getElementById('stickyAd').style.display='none';
-      document.getElementById('adminList').innerHTML='<div style="color:#888;padding:20px;text-align:center">Bado hakuna Ads - Wewe kama ADMIN bonyeza 💰 ADS - ANZA HAPA uanze ku-upload!</div>';
+      document.getElementById('topAdContainer').innerHTML='<a href="'+topAd.link+'" target="_blank" style="text-decoration:none"><div style="background:#facc15;color:#000;padding:14px;border-radius:10px;font-weight:bold;text-align:left"><div style="font-size:13px">'+topAd.title+'</div><div style="font-size:11px;font-weight:normal">'+topAd.desc+'</div><div style="font-size:10px;background:#000;color:#facc15;padding:4px 10px;border-radius:15px;display:inline-block;margin-top:6px">TZS '+topAd.pay+'</div></div></a>';
+    } else {
+      // Kama kuna AdSterra code, onyesha box, kama hakuna, ficha
+      let hasAdsterra = document.getElementById('topAdContainer').innerHTML.includes('atOptions') || document.getElementById('topAdContainer').innerHTML.includes('highperformance');
+      if(!hasAdsterra) box.style.display='none';
     }
-  };
-};
-window.filterGames=function(cat,btn){
-  document.querySelectorAll('.f-btn').forEach(function(b){ b.classList.remove('active'); b.classList.add('off'); });
-  btn.classList.add('active');
-  window.db.transaction("games","readonly").objectStore("games").getAll().onsuccess=function(e){
-    let g=e.target.result.filter(function(x){ return cat=='all'||x.cat==cat; });
-    document.getElementById('gGrid').innerHTML=g.length?g.map(function(x){ return '<div class="item"><b>'+x.name+'</b><br><small>'+x.price+'</small></div>'; }).join(''):'<div style="grid-column:1/3;color:#555">Hakuna</div>';
   };
 };
 window.switchAuth=function(id){
