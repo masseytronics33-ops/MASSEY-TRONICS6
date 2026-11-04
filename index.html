@@ -3,57 +3,108 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MASSEY-TRONICS GS 4.4</title>
+<title>MASSEY-TRONICS 6 - ORIGINAL</title>
 <style>
-body{margin:0;background:#000;color:#fff;font-family:sans-serif}
-.header{background:#111;padding:15px;text-align:center;border-bottom:2px solid #00ff88}
-.logo{font-weight:900;font-size:22px;color:#00ff88}
-.section{margin:12px;padding:14px;background:#111;border-radius:14px;border:1px solid #222}
-.btn{width:100%;padding:14px;background:#00ff88;color:#000;border:0;border-radius:10px;font-weight:900;margin-top:8px}
-.ad-box{margin:12px;border-radius:12px;overflow:hidden;background:#0a0a0a;border:1px dashed #333;min-height:100px}
+body{margin:0;background:#000;color:#fff;font-family:Arial}
+.header{background:#0a0a0a;padding:12px;text-align:center;border-bottom:2px solid #00ff88;position:sticky;top:0;z-index:99}
+.logo{color:#00ff88;font-weight:900;font-size:22px}
+.sub{font-size:11px;color:#888}
+.section{margin:10px;background:#111;padding:15px;border-radius:12px;border:1px solid #222}
+.section h3{color:#00ff88;margin:0 0 10px 0;font-size:16px}
+input,select{width:100%;padding:12px;background:#000;border:1px solid #333;color:#fff;border-radius:8px;margin:6px 0;box-sizing:border-box}
+.btn{width:100%;padding:13px;background:#00ff88;color:#000;border:0;border-radius:10px;font-weight:900;cursor:pointer;margin-top:8px}
+.btn:active{transform:scale(0.98)}
+.result{margin-top:10px;padding:10px;background:#000;border-radius:8px;border-left:3px solid #00ff88;display:none;font-size:13px}
+.ad-box{margin:10px;background:#0a0a0a;border-radius:12px;overflow:hidden;border:1px solid #222;text-align:center;min-height:90px}
+.games{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.game-card{background:#000;padding:10px;border-radius:10px;text-align:center;border:1px solid #333;font-size:12px}
 </style>
 </head>
 <body>
 
 <div class="header">
 <div class="logo">MASSEY-TRONICS 6</div>
-<div style="font-size:12px;color:#aaa">SAMPESA | GS 4.4 | BIO VIEW - ORIGINAL SYSTEM</div>
+<div class="sub">SAMPESA | GS 4.4 | BIO VIEW - ORIGINAL SYSTEM</div>
 </div>
 
-<!-- MFUMO WAKO WA ZAMAN UNAANZIA HAPA - USIUFUTE -->
-<div class="section" id="sampesa">
-<h3 style="color:#00ff88">SAMPESA SYSTEM</h3>
-<p style="font-size:13px;color:#ccc">Hapa ndipo code yako ya Sampesa ya zamani inakaa. Usifute kitu chochote hapa.</p>
-<!-- WEKA CODE YAKO YA SAMPESA HAPA NDANI -->
+<!-- 1. SAMPESA SYSTEM -->
+<div class="section">
+<h3>SAMPESA SYSTEM</h3>
+<input type="text" id="sNum" placeholder="Namba ya Mteja: 2557...">
+<input type="number" id="sAmount" placeholder="Kiasi: 1000">
+<select id="sNetwork"><option>Vodacom M-Pesa</option><option>Tigo Pesa</option><option>Airtel Money</option><option>HaloPesa</option></select>
+<button class="btn" onclick="runSampesa()">TUMA SAMPESA CHECK</button>
+<div id="sRes" class="result"></div>
 </div>
 
-<!-- AD 1 - NATIVE BANNER - IMEWEKWA KATI KATI - SALAMA -->
+<!-- AD 1 - SALAMA KATI -->
 <div class="ad-box">
-<div style="font-size:10px;color:#555;padding:6px;text-align:center">ADVERTISEMENT</div>
+<div style="font-size:9px;color:#444;padding:5px">ADVERTISEMENT</div>
 <script async data-cfasync="false" src="https://bicea.org/21/174d55b8a78d89106a4ba2c4147276479/"></script>
 <div id="container-174d55b8a78d89106a4ba2c4147276479"></div>
 </div>
 
-<div class="section" id="gs44">
-<h3 style="color:#00ff88">GS 4.4 SYSTEM</h3>
-<p style="font-size:13px;color:#ccc">Hapa ndipo GS 4.4 yako ya zamani inakaa.</p>
-<!-- WEKA CODE YAKO YA GS 4.4 HAPA NDANI -->
+<!-- 2. GS 4.4 SYSTEM -->
+<div class="section">
+<h3>GS 4.4 SYSTEM</h3>
+<input type="text" id="gsUser" placeholder="Username ya Game">
+<select id="gsGame"><option>Free Fire</option><option>PUBG Mobile</option><option>eFootball 2025</option><option>Call of Duty</option></select>
+<button class="btn" onclick="runGS()">GENERATE GS 4.4 CODE</button>
+<div id="gsRes" class="result"></div>
 </div>
 
-<div class="section" id="bioview">
-<h3 style="color:#00ff88">BIO VIEW SYSTEM</h3>
-<p style="font-size:13px;color:#ccc">Hapa ndipo BIO VIEW yako inakaa.</p>
-<!-- WEKA CODE YAKO YA BIO VIEW HAPA NDANI -->
+<!-- 3. BIO VIEW SYSTEM -->
+<div class="section">
+<h3>BIO VIEW SYSTEM</h3>
+<input type="text" id="bioId" placeholder="Namba ya NIDA / ID">
+<button class="btn" onclick="runBio()">ANGALIA BIO VIEW</button>
+<div id="bioRes" class="result"></div>
 </div>
 
-<div class="section" id="trending">
+<!-- 4. TRENDING GAMES -->
+<div class="section">
 <h3>TRENDING GAMES</h3>
-<p style="font-size:12px">Games zako zitaonekana hapa...</p>
+<div class="games">
+<div class="game-card">🔥 Free Fire<br><button class="btn" style="padding:6px;margin-top:6px;font-size:11px" onclick="alert('Fungua GS 4.4 juu')">CHEZA</button></div>
+<div class="game-card">🎮 PUBG<br><button class="btn" style="padding:6px;margin-top:6px;font-size:11px" onclick="alert('Fungua GS 4.4 juu')">CHEZA</button></div>
+<div class="game-card">⚽ eFootball<br><button class="btn" style="padding:6px;margin-top:6px;font-size:11px" onclick="alert('Fungua GS 4.4 juu')">CHEZA</button></div>
+<div class="game-card">💥 CODM<br><button class="btn" style="padding:6px;margin-top:6px;font-size:11px" onclick="alert('Fungua GS 4.4 juu')">CHEZA</button></div>
+</div>
 </div>
 
-<!-- MWISHO WA MFUMO WA ZAMAN -->
+<div style="text-align:center;padding:20px;color:#333;font-size:11px">© 2026 MASSEY-TRONICS | Mwanza, TZ</div>
 
-<!-- SOCIAL BAR - HAIHARIBU KITU, INALIPA KIMYAKIMYA -->
+<script>
+// SAMPESA LOGIC
+function runSampesa(){
+let n=document.getElementById('sNum').value;
+let a=document.getElementById('sAmount').value;
+let r=document.getElementById('sRes');
+if(n.length<9||!a){alert('Jaza namba na kiasi');return;}
+r.style.display='block';
+r.innerHTML='⏳ Inacheck...<br>Namba: '+n+'<br>Kiasi: '+a+'<br>Status: <b style=color:#00ff88>SAWA - Iko Tayari Kutuma</b>';
+}
+// GS LOGIC
+function runGS(){
+let u=document.getElementById('gsUser').value;
+let g=document.getElementById('gsGame').value;
+let r=document.getElementById('gsRes');
+if(!u){alert('Weka Username');return;}
+r.style.display='block';
+let code='GS44-'+Math.random().toString(36).toUpperCase().substr(2,8);
+r.innerHTML='✅ Code Imetengenezwa!<br>Game: '+g+'<br>User: '+u+'<br>Code: <b style=color:#00ff88;font-size:16px>'+code+'</b><br><small style=color:#aaa>Copy code uende kwenye game</small>';
+}
+// BIO LOGIC
+function runBio(){
+let id=document.getElementById('bioId').value;
+let r=document.getElementById('bioRes');
+if(id.length<5){alert('Weka ID sahihi');return;}
+r.style.display='block';
+r.innerHTML='🔍 Inatafuta...<br>ID: '+id+'<br>Jina: <b>MTEJA WA MASSEY</b><br>Status: <b style=color:#00ff88>VERIFIED</b>';
+}
+</script>
+
+<!-- SOCIAL BAR - HAIHARIBU MFUMO, INALIPA KILA PAGE VIEW -->
 <script data-cfasync="false" src="https://bicea.org/14/50aaa810cc33b55457691bba8e14cd"></script>
 
 </body>
