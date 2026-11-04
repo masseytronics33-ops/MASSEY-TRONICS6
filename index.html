@@ -3,108 +3,194 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MASSEY TRONICS GS 4.4</title>
+<title>MASSEY - PROFILE + GAMES UPLOAD</title>
 <style>
 body{margin:0;background:#0a0f1e;color:#fff;font-family:Arial}
-.top{padding:10px 15px;display:flex;align-items:center;gap:8px;font-size:12px;font-weight:bold;color:#ffc107;background:#0a0f1e;border-bottom:1px solid #1a233a}
-.dot{width:18px;height:18px;background:#ffc107;border-radius:4px}
-.tabs{display:flex;gap:8px;padding:12px 15px;background:#0a0f1e;position:sticky;top:0;z-index:10}
-.tab{background:#1a233a;color:#888;padding:7px 16px;border-radius:20px;font-size:12px;border:0;cursor:pointer}
+.top{padding:10px 15px;display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:bold;color:#ffc107;border-bottom:1px solid #1a233a}
+.card{margin:10px;background:#141d33;padding:14px;border-radius:12px;border:1px solid #1e2a4a}
+input{width:100%;padding:12px;margin:6px 0;background:#0a0f1e;border:1px solid #333;color:#fff;border-radius:10px;box-sizing:border-box}
+.btn-main{width:100%;background:#facc15;color:#000;border:0;padding:12px;border-radius:10px;font-weight:900;cursor:pointer;margin-top:8px}
+.face-box{width:100%;height:200px;background:#000;border-radius:12px;border:2px dashed #facc15;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.tabs{display:flex;gap:6px;padding:10px;overflow-x:auto}
+.tab{background:#1a233a;color:#888;padding:6px 14px;border-radius:20px;font-size:11px;border:0;white-space:nowrap}
 .tab.active{background:#fff;color:#000;font-weight:bold}
-.content{display:none}
-.content.active{display:block}
-.hero{background:linear-gradient(to right,#0a0f1e 20%,rgba(10,15,30,0.2)), url('https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?w=900') center/cover;padding:50px 20px}
-.hero h1{font-size:32px;margin:0;line-height:1.1}
-.hero h1 span{color:#ffc107}
-.section{margin:10px;background:#141d33;padding:14px;border-radius:12px;border:1px solid #1e2a4a}
-.game-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.game{background:#0a0f1e;padding:12px;border-radius:10px;border:1px solid #222;text-align:center;font-size:13px}
-.btn{width:100%;background:#ffc107;color:#000;border:0;padding:10px;border-radius:8px;font-weight:bold;margin-top:8px;cursor:pointer}
-.ad-box{margin:10px;background:#0a0f1e;border-radius:10px;border:1px dashed #333;text-align:center;padding:6px;min-height:80px}
+.game-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.game{background:#0f172a;padding:10px;border-radius:10px;border:1px solid #1e293b;text-align:center}
+.profile-img{width:60px;height:60px;border-radius:50%;object-fit:cover;border:2px solid #facc15}
+.cat-filter{display:flex;gap:6px;margin-bottom:10px;overflow-x:auto}
+.cat{background:#1a233a;color:#aaa;padding:5px 12px;border-radius:15px;font-size:11px;border:0}
+.cat.active{background:#facc15;color:#000}
 </style>
 </head>
 <body>
 
-<div class="top"><div class="dot"></div> MASSEY TRONICS</div>
+<div class="top"><span>🟨 MASSEY TRONICS</span><span id="profileTop" style="font-size:10px;color:#fff"></span></div>
 
+<!-- ACCOUNT PAGE -->
+<div id="accountPage">
+<div class="card">
+<div style="color:#facc15;font-weight:bold">✅ FUNGUA ACCOUNT - FACE ID</div>
+<input id="fullName" placeholder="Jina Kamili">
+<input id="phone" placeholder="Namba 255...">
+<div class="face-box" id="faceBox"><div id="ph" style="color:#666;font-size:12px">📷 START CAMERA</div><video id="video" autoplay playsinline style="width:100%;height:100%;display:none;object-fit:cover"></video></div>
+<div id="status" style="font-size:11px;color:#22c55e;margin-top:6px;display:none"></div>
+<button class="btn-main" onclick="startCam()" id="btnCam">📷 START CAMERA</button>
+<button class="btn-main" onclick="captureFace()" id="btnCap" style="display:none;background:#22c55e">📸 CAPTURE</button>
+<button class="btn-main" onclick="saveAccount()" style="background:#fff">FUNGUA & INGIA</button>
+</div>
+</div>
+
+<!-- MAIN SYSTEM NDANI -->
+<div id="mainSystem" style="display:none">
 <div class="tabs">
-<button class="tab active" onclick="openTab('games')">GAMES</button>
-<button class="tab" onclick="openTab('apps')">APPS & IT</button>
-<button class="tab" onclick="openTab('gambling')">GAMBLING</button>
+<button class="tab active" onclick="showTab('games')">GAMES</button>
+<button class="tab" onclick="showTab('profile')">PROFILE</button>
+<button class="tab" onclick="showTab('upload')">UPLOAD</button>
+<button class="tab" onclick="showTab('gambling')">GAMBLING</button>
 </div>
 
-<!-- GAMES TAB - KAMA KWENYE PICHA YAKO -->
-<div id="games" class="content active">
-<div class="section">
-<div style="font-size:11px;color:#ffc107">🔥 TRENDING GAMES</div>
-<div class="game-grid">
-<div class="game">Free Fire<br><small style="color:#aaa">TZS 2000</small><button class="btn" style="padding:6px">NUNUA</button></div>
-<div class="game">PUBG UC<br><small style="color:#aaa">TZS 3500</small><button class="btn" style="padding:6px">NUNUA</button></div>
-<div class="game">eFootball<br><small style="color:#aaa">TZS 5000</small><button class="btn" style="padding:6px">NUNUA</button></div>
-<div class="game">CODM<br><small style="color:#aaa">TZS 4000</small><button class="btn" style="padding:6px">NUNUA</button></div>
+<!-- GAMES - NA CATEGORIES -->
+<div id="games" class="tab-c">
+<div class="card">
+<div class="cat-filter">
+<button class="cat active" onclick="filterCat('all',this)">ALL</button>
+<button class="cat" onclick="filterCat('football',this)">FOOTBALL ⚽</button>
+<button class="cat" onclick="filterCat('action',this)">ACTION 🔥</button>
+<button class="cat" onclick="filterCat('sports',this)">SPORTS</button>
 </div>
-
-<!-- AD NDANI YA GAMES - SALAMA, HAIZUI -->
-<div class="ad-box">
-<div style="font-size:9px;color:#555">ADVERTISEMENT</div>
-<div id="ad1"></div>
+<div style="font-size:11px;color:#facc15">🔥 GAMES ZAKO UTAKAZO-UPLOAD</div>
+<div class="game-grid" id="gameGrid" style="margin-top:8px">
+<div style="grid-column:1/3;text-align:center;padding:20px;color:#555;font-size:12px">Hakuna Game bado<br>Nenda UPLOAD ukaweke Football au Games zako</div>
 </div>
-
 </div>
 </div>
 
-<!-- APPS TAB -->
-<div id="apps" class="content">
-<div class="section">
-<div style="color:#ffc107">APPS & IT SERVICES</div>
-<div style="font-size:13px;color:#ccc;margin-top:8px">💻 Huduma za IT - Software, Windows, Networking</div>
-<button class="btn">OMBA HUDUMA</button>
+<!-- PROFILE / SEMI-PROFILE -->
+<div id="profile" class="tab-c" style="display:none">
+<div class="card" style="text-align:center">
+<img id="profImg" class="profile-img" src="">
+<div style="margin-top:8px;font-weight:bold" id="profName"></div>
+<div style="font-size:11px;color:#aaa" id="profPhone"></div>
+<div style="font-size:10px;color:#22c55e;margin-top:6px">✅ FACE ID VERIFIED</div>
+<div style="margin-top:12px;text-align:left;font-size:12px;border-top:1px solid #222;padding-top:10px">
+<div>📊 Games Ulizonunua: <b id="bought">0</b></div>
+<div>💰 Salio: <b>TZS 0</b></div>
+</div>
+<button class="btn-main" style="background:#ff4444;color:#fff" onclick="logout()">LOGOUT</button>
 </div>
 </div>
 
-<!-- GAMBLING TAB - HAPA NDIPO PICHA YA BET SMART IMEINGIA -->
-<div id="gambling" class="content">
-<div class="hero">
-<h1>BET SMART,<br><span>WIN BIG.</span></h1>
-<p style="font-size:12px;color:#ddd">Chagua smartu - odds kali na ushindi mkubwa!</p>
-<button class="btn" style="width:auto;padding:10px 20px">INGIA KUBET</button>
+<!-- UPLOAD SECTION - WEWE MWENYEWE UNAWEKA GAMES -->
+<div id="upload" class="tab-c" style="display:none">
+<div class="card">
+<div style="color:#facc15;font-weight:bold">📤 UPLOAD GAME YAKO</div>
+<div style="font-size:11px;color:#aaa">Hapa ndipo utaweka Football, eFootball, n.k - wewe mwenyewe</div>
+<input id="gName" placeholder="Jina la Game - mfano: eFootball 2025">
+<input id="gPrice" placeholder="Bei - mfano: TZS 3000">
+<select id="gCat" style="width:100%;padding:12px;margin:6px 0;background:#0a0f1e;border:1px solid #333;color:#fff;border-radius:10px">
+<option value="football">FOOTBALL ⚽</option>
+<option value="action">ACTION 🔥</option>
+<option value="sports">SPORTS</option>
+<option value="all">ALL</option>
+</select>
+<input id="gImage" placeholder="Link ya Picha (optional)">
+<button class="btn-main" onclick="uploadGame()">➕ WEKA GAME KWENYE SYSTEM</button>
+<div id="uploadStatus" style="font-size:11px;color:#22c55e;margin-top:8px;display:none"></div>
 </div>
-<div class="section">
-<div style="font-size:13px">⚽ Mechi za Leo - Odds Kali</div>
-<div style="margin-top:10px;font-size:12px;color:#aaa">Simba vs Yanga - 1.85 | 3.20 | 4.10</div>
-<button class="btn">WEKA BET</button>
 </div>
+
+<div id="gambling" class="tab-c" style="display:none">
+<div class="card" style="background:linear-gradient(to right,#0a0f1e 20%,transparent), url('https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?w=900') center/cover;padding:40px 20px">
+<h1 style="margin:0">BET SMART,<br><span style="color:#facc15">WIN BIG.</span></h1>
+</div>
+</div>
+
 </div>
 
 <script>
-function openTab(name){
-document.querySelectorAll('.content').forEach(c=>c.classList.remove('active'));
+let faceData=null, db=null, stream=null;
+let req=indexedDB.open("MasseyDB",2);
+req.onupgradeneeded=e=>{
+let d=e.target.result;
+if(!d.objectStoreNames.contains("accounts")) d.createObjectStore("accounts",{keyPath:"phone"});
+if(!d.objectStoreNames.contains("games")) d.createObjectStore("games",{autoIncrement:true});
+}
+req.onsuccess=e=>{db=e.target.result; loadGames();}
+
+function startCam(){
+navigator.mediaDevices.getUserMedia({video:{facingMode:"user"}}).then(s=>{
+stream=s; let v=document.getElementById('video'); v.srcObject=s; v.style.display='block';
+document.getElementById('ph').style.display='none';
+document.getElementById('btnCam').style.display='none';
+document.getElementById('btnCap').style.display='block';
+})}
+function captureFace(){
+let v=document.getElementById('video');
+let c=document.createElement('canvas'); c.width=v.videoWidth; c.height=v.videoHeight;
+c.getContext('2d').drawImage(v,0,0); faceData=c.toDataURL();
+document.getElementById('faceBox').innerHTML='<img src="'+faceData+'" style="width:100%;height:100%;object-fit:cover"><div style="position:absolute;bottom:5px;left:5px;background:#22c55e;color:#000;font-size:10px;padding:3px 8px;border-radius:10px">✓ FACE ID</div>';
+document.getElementById('status').style.display='block'; document.getElementById('status').innerHTML='✅ Face ID captured';
+if(stream) stream.getTracks().forEach(t=>t.stop());
+}
+function saveAccount(){
+let name=document.getElementById('fullName').value, phone=document.getElementById('phone').value;
+if(!name||!phone||!faceData){alert('Jaza jina, namba na piga picha');return}
+let tx=db.transaction("accounts","readwrite");
+tx.objectStore("accounts").put({name,phone,face:faceData,time:new Date().toLocaleString()});
+tx.oncomplete=()=>{localStorage.setItem('cur',phone); enterMain();}}
+function enterMain(){
+let phone=localStorage.getItem('cur');
+let tx=db.transaction("accounts","readonly");
+tx.objectStore("accounts").get(phone).onsuccess=e=>{
+let a=e.target.result;
+document.getElementById('accountPage').style.display='none';
+document.getElementById('mainSystem').style.display='block';
+document.getElementById('profName').innerText=a.name;
+document.getElementById('profPhone').innerText=a.phone;
+document.getElementById('profImg').src=a.face;
+document.getElementById('profileTop').innerText=a.name+' ✓';
+loadGames();
+}
+}
+function uploadGame(){
+let name=document.getElementById('gName').value, price=document.getElementById('gPrice').value, cat=document.getElementById('gCat').value;
+if(!name||!price){alert('Jaza jina na bei');return}
+let tx=db.transaction("games","readwrite");
+tx.objectStore("games").add({name,price,cat,time:Date.now()});
+tx.oncomplete=()=>{
+document.getElementById('uploadStatus').style.display='block';
+document.getElementById('uploadStatus').innerHTML='✅ Game '+name+' imewekwa kwenye '+cat.toUpperCase();
+document.getElementById('gName').value=''; document.getElementById('gPrice').value='';
+loadGames();
+}
+}
+function loadGames(filter='all'){
+if(!db) return;
+let tx=db.transaction("games","readonly");
+tx.objectStore("games").getAll().onsuccess=e=>{
+let games=e.target.result;
+let grid=document.getElementById('gameGrid');
+if(games.length==0){grid.innerHTML='<div style="grid-column:1/3;text-align:center;padding:20px;color:#555;font-size:12px">Hakuna Game bado<br>Upload Football kwanza</div>';return}
+let html='';
+games.forEach(g=>{
+if(filter!='all' && g.cat!=filter) return;
+html+=`<div class="game"><b>${g.name}</b><br><small>${g.price}</small><br><small style="color:#facc15">${g.cat.toUpperCase()}</small><br><button class="btn-yellow" style="width:80px">NUNUA</button></div>`;
+});
+grid.innerHTML=html||'<div style="grid-column:1/3;text-align:center;color:#555">Hakuna kwenye '+filter+'</div>';
+}
+}
+function filterCat(cat,btn){
+document.querySelectorAll('.cat').forEach(c=>c.classList.remove('active')); btn.classList.add('active');
+loadGames(cat);
+}
+function showTab(id){
+document.querySelectorAll('.tab-c').forEach(c=>c.style.display='none');
+document.getElementById(id).style.display='block';
 document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-document.getElementById(name).classList.add('active');
 event.target.classList.add('active');
 }
-
-// ADS - ZINAPAKIA BAADA YA PAGE KU-LOAD - HAZIHARIBU SYSTEM
-window.addEventListener('load', function(){
-setTimeout(function(){
-// Native Banner
-var s1=document.createElement('script');
-s1.async=true;
-s1.dataset.cfasync="false";
-s1.src="https://bicea.org/21/174d55b8a78d89106a4ba2c4147276479/";
-document.getElementById('ad1').appendChild(s1);
-var d1=document.createElement('div');
-d1.id="container-174d55b8a78d89106a4ba2c4147276479";
-document.getElementById('ad1').appendChild(d1);
-
-// Social Bar - Kimya kimya
-var s2=document.createElement('script');
-s2.dataset.cfasync="false";
-s2.src="https://bicea.org/14/50aaa810cc33b55457691bba8e14cd";
-document.body.appendChild(s2);
-}, 2000); // Subiri sec 2 page iload ndio ads zije
-});
+function logout(){localStorage.removeItem('cur'); location.reload();}
+window.onload=()=>{if(localStorage.getItem('cur')) enterMain();}
 </script>
-
 </body>
 </html>
