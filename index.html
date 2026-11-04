@@ -3,90 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MASSEY TRONICS - GS 4.4 BIO VIEW</title>
+<title>MASSEY-TRONICS GS 4.4</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#0f172a;color:white;min-height:100vh;display:flex;justify-content:center;align-items:center;padding:15px}
-.container{background:#1e293b;width:100%;max-width:400px;padding:25px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.5)}
-.header{text-align:center;margin-bottom:20px}
-.header h1{color:#facc15;font-size:22px}
-.header p{color:#94a3b8;font-size:12px;margin-top:5px}
-.tabs{display:flex;gap:10px;margin-bottom:20px}
-.tabs button{flex:1;padding:10px;border-radius:20px;border:none;cursor:pointer;font-weight:bold}
-.tab-active{background:white;color:black}
-.tab-inactive{background:#334155;color:#94a3b8}
-input{width:100%;padding:14px;margin-bottom:12px;border-radius:10px;border:none;background:#334155;color:white;outline:none}
-.btn-main{width:100%;padding:14px;border-radius:10px;border:none;font-weight:bold;cursor:pointer;margin-bottom:10px}
-.btn-white{background:white;color:black}
-.btn-yellow{background:#facc15;color:black}
-.games-area{display:none;margin-top:20px}
-.game-card{background:#334155;padding:15px;border-radius:10px;margin-bottom:10px;text-align:center}
-.ad-box{margin:15px 0;background:#0f172a;border-radius:10px;min-height:100px;display:flex;align-items:center;justify-content:center;border:1px dashed #334155}
+body{margin:0;background:#000;color:#fff;font-family:sans-serif}
+.header{background:#111;padding:15px;text-align:center;border-bottom:2px solid #00ff88}
+.logo{font-weight:900;font-size:22px;color:#00ff88}
+.section{margin:12px;padding:14px;background:#111;border-radius:14px;border:1px solid #222}
+.btn{width:100%;padding:14px;background:#00ff88;color:#000;border:0;border-radius:10px;font-weight:900;margin-top:8px}
+.ad-box{margin:12px;border-radius:12px;overflow:hidden;background:#0a0a0a;border:1px dashed #333;min-height:100px}
 </style>
 </head>
 <body>
 
-<div class="container">
-  <div class="header">
-    <h1>⚡ MASSEY TRONICS</h1>
-    <p>GS 4.4 - BIO VIEW</p>
-    <p style="font-size:10px">Sampesa kita chokora sana Big View</p>
-  </div>
-
-  <!-- LOGIN SECTION -->
-  <div id="loginSection">
-    <div class="tabs">
-      <button class="tab-active">Login</button>
-      <button class="tab-inactive">Jisajili</button>
-    </div>
-
-    <input type="text" id="jina" placeholder="Jina">
-    <input type="password" id="pass" placeholder="Password">
-
-    <button class="btn-main btn-white" onclick="ingia()">INGIA</button>
-    <button class="btn-main btn-yellow" onclick="ingiaUso()">👤 INGIA KWA USO</button>
-  </div>
-
-  <!-- GAMES SECTION - BAADA YA KUINGIA -->
-  <div id="gamesSection" class="games-area">
-    <h3 style="text-align:center;margin-bottom:15px">🔥 TRENDING GAMES</h3>
-    
-    <div class="game-card">♟️ CHESS MASTER</div>
-    <div class="game-card">🧩 PUZZLE BOX</div>
-
-    <!-- HAPA NDIPO NATIVE BANNER YA ADSTERRA - KATIKATI YA GAMES -->
-    <div class="ad-box">
-      <script async="async" data-cfasync="false" src="https://bicea.org/21/174d55b8a78d89106a4ba2c4147276479/"></script>
-      <div id="container-174d55b8a78d89106a4ba2c4147276479"></div>
-    </div>
-
-    <div class="game-card">💣 MINES - GAMBLING</div>
-    <div class="game-card">✈️ AVIATOR - GAMBLING</div>
-    
-    <div class="game-card">🎮 GS 4.4 BIO VIEW</div>
-  </div>
+<div class="header">
+<div class="logo">MASSEY-TRONICS 6</div>
+<div style="font-size:12px;color:#aaa">SAMPESA | GS 4.4 | BIO VIEW - ORIGINAL SYSTEM</div>
 </div>
 
-<script>
-function ingia(){
-  let jina = document.getElementById('jina').value;
-  let pass = document.getElementById('pass').value;
-  if(jina == "" || pass == ""){
-    alert("Weka Jina na Password!");
-    return;
-  }
-  // Inaenda ndani ya games
-  document.getElementById('loginSection').style.display='none';
-  document.getElementById('gamesSection').style.display='block';
-}
-function ingiaUso(){
-  alert("Face ID inaangalia uso...");
-  document.getElementById('loginSection').style.display='none';
-  document.getElementById('gamesSection').style.display='block';
-}
-</script>
+<!-- MFUMO WAKO WA ZAMAN UNAANZIA HAPA - USIUFUTE -->
+<div class="section" id="sampesa">
+<h3 style="color:#00ff88">SAMPESA SYSTEM</h3>
+<p style="font-size:13px;color:#ccc">Hapa ndipo code yako ya Sampesa ya zamani inakaa. Usifute kitu chochote hapa.</p>
+<!-- WEKA CODE YAKO YA SAMPESA HAPA NDANI -->
+</div>
 
-<!-- SOCIAL BAR YA ADSTERRA - IMEWEKWA MWISHO KABISA ILI ISIZUIE LOGIN -->
+<!-- AD 1 - NATIVE BANNER - IMEWEKWA KATI KATI - SALAMA -->
+<div class="ad-box">
+<div style="font-size:10px;color:#555;padding:6px;text-align:center">ADVERTISEMENT</div>
+<script async data-cfasync="false" src="https://bicea.org/21/174d55b8a78d89106a4ba2c4147276479/"></script>
+<div id="container-174d55b8a78d89106a4ba2c4147276479"></div>
+</div>
+
+<div class="section" id="gs44">
+<h3 style="color:#00ff88">GS 4.4 SYSTEM</h3>
+<p style="font-size:13px;color:#ccc">Hapa ndipo GS 4.4 yako ya zamani inakaa.</p>
+<!-- WEKA CODE YAKO YA GS 4.4 HAPA NDANI -->
+</div>
+
+<div class="section" id="bioview">
+<h3 style="color:#00ff88">BIO VIEW SYSTEM</h3>
+<p style="font-size:13px;color:#ccc">Hapa ndipo BIO VIEW yako inakaa.</p>
+<!-- WEKA CODE YAKO YA BIO VIEW HAPA NDANI -->
+</div>
+
+<div class="section" id="trending">
+<h3>TRENDING GAMES</h3>
+<p style="font-size:12px">Games zako zitaonekana hapa...</p>
+</div>
+
+<!-- MWISHO WA MFUMO WA ZAMAN -->
+
+<!-- SOCIAL BAR - HAIHARIBU KITU, INALIPA KIMYAKIMYA -->
 <script data-cfasync="false" src="https://bicea.org/14/50aaa810cc33b55457691bba8e14cd"></script>
 
 </body>
