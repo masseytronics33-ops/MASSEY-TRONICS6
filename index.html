@@ -39,27 +39,24 @@ input,select{width:100%;padding:13px;margin:6px 0;background:#0a0f1e;border:1px 
 <body>
 <div class="top"><span>🟨 MASSEY TRONICS 6.1</span><span id="topName" style="color:#fff;font-size:11px"></span></div>
 
-<!-- LOGIN -->
+<!-- LOGIN - ILIYOREKEBISHWA -->
 <div id="authPage"><div class="card" style="text-align:center">
 <h2 style="color:#facc15;margin:5px 0">Karibu Massey Tronics</h2>
-<p style="color:#aaa;font-size:13px">Mwanza • Games • IT Issues • Tips<br>Malipo: M-Pesa / Tigo Pesa</p>
-<input id="sName" placeholder="Jina lako - weka MASSEY uwe ADMIN" style="text-align:left">
+<p style="color:#aaa;font-size:13px">Games • IT Issues • Tips</p>
+<input id="sName" placeholder="Jina" style="text-align:left">
 <input id="sPhone" placeholder="Namba 255..." style="text-align:left">
 <button class="btn" onclick="window.signup()">INGIA / FUNGUA ACCOUNT</button>
-<p style="font-size:11px;color:#888">Kila account ina namba yake. Hakuna picha ya uso.</p>
+<p style="font-size:11px;color:#888">Kila account ina namba yake.</p>
 </div></div>
 
 <div id="system" style="display:none">
-<!-- SECTION KUBWA 3 TU -->
 <div class="main-nav">
 <button class="m-tab active" id="mHome" onclick="window.mainTab('home')">🏠 HOME</button>
 <button class="m-tab off" id="mProf" onclick="window.mainTab('profile')">👤 PROFILE</button>
 <button class="m-tab off" id="mAdmin" onclick="window.mainTab('admin')" style="display:none">📤 ADMIN</button>
 </div>
 
-<!-- ============ 1. HOME ============ -->
 <div id="home" class="mainSec">
-<!-- AD 1 JUU - 32080848 -->
 <div class="ad-box"><div class="ad-label">ADVERTISEMENT</div><div class="ad-slot">
 <script>atOptions={'key':'32080848','format':'iframe','height':50,'width':320,'params':{}};</script>
 <script src="//www.highperformanceformat.com/32080848/invoke.js"></script>
@@ -73,22 +70,18 @@ input,select{width:100%;padding:13px;margin:6px 0;background:#0a0f1e;border:1px 
 
 <div id="games" class="homeSec"><div class="card"><div class="grid" id="gGrid"></div></div></div>
 <div id="it" class="homeSec" style="display:none"><div class="card"><div id="itGrid"></div></div></div>
-
-<!-- TIPS - HAPA NDIO WINWIN + MINES -->
 <div id="tips" class="homeSec" style="display:none"><div class="card">
 <div style="text-align:center"><span style="background:#ff4444;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:bold">18+ TU</span>
 <p style="color:#ccc;font-size:12px;line-height:1.5;margin-top:10px"><b style="color:#facc15">Onyo:</b> Kubashiri kuna hatari. Cheza kwa pesa unayoweza kupoteza. Usikope kucheza.</p></div>
 <div id="tipsGrid"></div>
 </div></div>
 
-<!-- AD 2 KATI - 32080849 -->
 <div class="ad-box"><div class="ad-label">ADVERTISEMENT</div><div class="ad-slot">
 <script>atOptions={'key':'32080849','format':'iframe','height':250,'width':300,'params':{}};</script>
 <script src="//www.highperformanceformat.com/32080849/invoke.js"></script>
 </div></div>
 </div>
 
-<!-- ============ 2. PROFILE ============ -->
 <div id="profile" class="mainSec" style="display:none"><div class="card" style="text-align:center">
 <div id="pAvatar" style="width:80px;height:80px;border-radius:50%;background:#facc15;color:#000;font-size:36px;display:flex;align-items:center;justify-content:center;margin:0 auto;font-weight:900">M</div>
 <div id="pName" style="font-weight:bold;margin-top:10px"></div>
@@ -102,35 +95,28 @@ input,select{width:100%;padding:13px;margin:6px 0;background:#0a0f1e;border:1px 
 <button class="btn" style="background:#ff4444;color:#fff;margin-top:12px" onclick="window.logout()">LOGOUT</button>
 </div></div>
 
-<!-- ============ 3. ADMIN ============ -->
 <div id="admin" class="mainSec" style="display:none"><div class="card">
 <div style="color:#ff4444;font-weight:bold">📤 ADMIN - UPLOAD KILA KITU</div>
-
-<!-- IDADI YA ACCOUNTS -->
 <div class="stat-box">
 <div class="stat"><b id="countTotal">0</b><span>WATU WOTE</span></div>
 <div class="stat"><b id="countGames">0</b><span>GAMES</span></div>
 <div class="stat"><b id="countIt">0</b><span>IT ISSUES</span></div>
 <div class="stat"><b id="countTips">0</b><span>TIPS</span></div>
 </div>
-
 <div class="admin-tabs">
 <button class="ad-tab on" id="tabG" onclick="window.adminTab('games')">GAMES</button>
 <button class="ad-tab off" id="tabI" onclick="window.adminTab('it')">IT ISSUES</button>
 <button class="ad-tab off" id="tabT" onclick="window.adminTab('tips')">TIPS</button>
 <button class="ad-tab off" id="tabU" onclick="window.adminTab('users')">👥 USERS</button>
 </div>
-
 <div id="adGames" class="upload-box"><input id="adName" placeholder="Game - mf: FC 26"><input id="adPrice" placeholder="Bei - 3000"><button class="btn" onclick="window.uploadGame()">➕ WEKA GAME</button></div>
 <div id="adIt" class="upload-box" style="display:none"><input id="itName" placeholder="IT Issue - mf: Windows 11 Haifunguki"><input id="itPrice" placeholder="Bei ya kutengeneza - 15000"><input id="itDesc" placeholder="Maelezo mafupi"><button class="btn" onclick="window.uploadIt()">➕ WEKA IT ISSUE</button></div>
 <div id="adTips" class="upload-box" style="display:none;border-color:#a855f7"><input id="tipTitle" placeholder="Kichwa - mf: WINWIN PARTNERS"><input id="tipDesc" placeholder="Maelezo - mf: Jiunge upate bonus"><input id="tipLink" placeholder="Link - https://..."><select id="tipType"><option value="winwin">🎰 WINWIN</option><option value="mines">🤖 MINES ASSISTANT</option><option value="other">💡 TIP NYINGINE</option></select><button class="btn" style="background:#a855f7;color:#fff" onclick="window.uploadTip()">➕ WEKA TIP / LINK</button></div>
 <div id="adUsers" class="upload-box" style="display:none"><div style="font-weight:bold;margin-bottom:8px">Watu wote waliofungua account:</div><div id="usersList" style="font-size:12px"></div></div>
-
 <div id="adStatus" style="font-size:12px;color:#22c55e;margin-top:10px;display:none"></div>
 </div></div>
 </div>
 
-<!-- AD 3 CHINI - 32080850 - SOCIAL BAR -->
 <div style="position:fixed;bottom:0;left:0;right:0;z-index:100;background:#000;text-align:center;padding:3px 0;border-top:1px solid #222">
 <div style="font-size:8px;color:#444">ADVERTISEMENT</div>
 <script>atOptions={'key':'32080850','format':'iframe','height':50,'width':320,'params':{}};</script>
@@ -142,15 +128,12 @@ window.db=null; window.currentUser=null;
 let req=indexedDB.open("MASSEY_V6_1",1);
 req.onupgradeneeded=function(e){let d=e.target.result; d.createObjectStore("accounts",{keyPath:"phone"}); d.createObjectStore("games",{autoIncrement:true}); d.createObjectStore("it",{autoIncrement:true}); d.createObjectStore("tips",{autoIncrement:true});};
 req.onsuccess=function(e){window.db=e.target.result; window.loadAll(); let c=localStorage.getItem('cur'); if(c) setTimeout(window.enter,400);};
-
 window.signup=function(){
   let name=document.getElementById('sName').value.trim(), phone=document.getElementById('sPhone').value.trim();
   if(!name||!phone) return alert('Weka jina na namba');
   let isAdmin=name.toLowerCase().includes('massey');
-  // Angalia kama tayari yupo - ili idadi isiongezeke mara mbili
   window.db.transaction("accounts","readonly").objectStore("accounts").get(phone).onsuccess=function(e){
     if(e.target.result){ localStorage.setItem('cur',phone); location.reload(); return; }
-    // Mpya - mpe ID na tarehe
     window.db.transaction("accounts","readwrite").objectStore("accounts").add({name,phone,isAdmin,joinDate:new Date().toLocaleDateString('sw-TZ'),time:Date.now()}).onsuccess=function(){ localStorage.setItem('cur',phone); location.reload(); };
   };
 };
@@ -182,7 +165,6 @@ window.loadAll=function(){
     let users=e.target.result||[]; users.sort((a,b)=>a.time-b.time);
     document.getElementById('countTotal').innerText=users.length;
     document.getElementById('pTotalUsers').innerText=users.length;
-    // Member ID - namba yake kulingana na alipofungua
     if(window.currentUser){ let idx=users.findIndex(u=>u.phone===window.currentUser.phone); document.getElementById('pMemberId').innerText='#'+String(idx+1).padStart(3,'0'); }
     document.getElementById('usersList').innerHTML=users.length?users.map((u,i)=>`<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #222"><span><b>#${String(i+1).padStart(3,'0')}</b> ${u.name} ${u.isAdmin?'<span style="color:#ff4444">(ADMIN)</span>':''}</span><span style="color:#aaa">${u.phone} • ${u.joinDate||''}</span></div>`).join(''):'<div>Hakuna watu bado</div>';
   };
