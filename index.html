@@ -3,284 +3,145 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MASSEY TRONICS 5.0 - 3 KEYS LIVE</title>
+<title>MASSEY TRONICS 6.0 - Nguo, Games, IT & WinWin</title>
 <style>
-*{box-sizing:border-box} body{margin:0;background:#0a0f1e;color:#fff;font-family:Arial;padding-bottom:80px}
-.top{padding:12px;background:#0a0f1e;border-bottom:1px solid #1a233a;color:#ffc107;font-weight:bold;position:sticky;top:0;z-index:30;display:flex;justify-content:space-between}
+*{box-sizing:border-box} body{margin:0;background:#0a0f1e;color:#fff;font-family:Arial;padding-bottom:90px}
+.top{padding:14px;background:#0a0f1e;border-bottom:1px solid #1a233a;color:#ffc107;font-weight:bold;position:sticky;top:0;z-index:30;display:flex;justify-content:space-between}
 .card{margin:10px;background:#141d33;padding:14px;border-radius:14px;border:1px solid #1e2a4a}
 input,select{width:100%;padding:13px;margin:6px 0;background:#0a0f1e;border:1px solid #444;color:#fff;border-radius:10px}
 .btn{width:100%;background:#facc15;color:#000;border:0;padding:13px;border-radius:10px;font-weight:900;cursor:pointer;margin-top:8px}
-.face-area{border:2px dashed #facc15;border-radius:14px;padding:8px;background:#000;margin:8px 0}
-.face-box{width:100%;height:230px;background:#000;border-radius:10px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center}
-video{width:100%;height:100%;object-fit:cover;display:none}
-.face-overlay{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:140px;height:180px;border:2px solid #facc15;border-radius:50%;box-shadow:0 0 0 1000px rgba(0,0,0,0.6)}
-.auth{display:flex;gap:8px} .a-btn{flex:1;padding:12px;border-radius:10px;border:0;font-weight:bold;cursor:pointer} .a-btn.on{background:#facc15;color:#000} .a-btn.off{background:#1a233a;color:#888}
-.main-nav{display:flex;gap:8px;padding:10px;position:sticky;top:45px;background:#0a0f1e;z-index:20} .m-tab{flex:1;padding:12px;border-radius:10px;border:0;font-weight:bold;cursor:pointer} .m-tab.active{background:#fff;color:#000} .m-tab.off{background:#1a233a;color:#888}
-.home-nav{display:flex;gap:6px;padding:10px;background:#0f172a;margin:10px;border-radius:10px;overflow-x:auto} .h-tab{padding:8px 16px;border-radius:20px;border:0;font-size:12px;font-weight:bold;white-space:nowrap;cursor:pointer} .h-tab.active{background:#facc15;color:#000} .h-tab.off{background:#1a233a;color:#aaa}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px} .item{background:#0f172a;padding:12px;border-radius:10px;border:1px solid #1e293b;text-align:center}
-.admin-tabs{display:flex;gap:4px;margin:10px 0} .ad-tab{flex:1;padding:10px;border-radius:8px;border:0;font-size:11px;font-weight:bold;cursor:pointer} .ad-tab.on{background:#ff4444;color:#fff} .ad-tab.off{background:#1a233a;color:#aaa}
-.sticky-ad{position:fixed;bottom:0;left:0;right:0;background:#141d33;border-top:2px solid #facc15;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;z-index:99}
+.btn-green{background:#22c55e;color:#fff}
+.main-nav{display:flex;gap:6px;padding:10px;position:sticky;top:46px;background:#0a0f1e;z-index:20}
+.m-tab{flex:1;padding:11px;border-radius:10px;border:0;font-weight:bold;cursor:pointer;font-size:12px}
+.m-tab.active{background:#fff;color:#000} .m-tab.off{background:#1a233a;color:#888}
+.home-nav{display:flex;gap:6px;padding:10px;background:#0f172a;margin:10px;border-radius:10px;overflow-x:auto}
+.h-tab{padding:8px 16px;border-radius:20px;border:0;font-size:12px;font-weight:bold;white-space:nowrap;cursor:pointer}
+.h-tab.active{background:#facc15;color:#000} .h-tab.off{background:#1a233a;color:#aaa}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.item{background:#0f172a;padding:12px;border-radius:10px;border:1px solid #1e293b;text-align:center}
+.item img{width:100%;height:110px;object-fit:cover;border-radius:8px;background:#000}
+.price{color:#facc15;font-weight:bold}
+.order-btn{display:block;background:#25D366;color:#000;font-weight:900;padding:9px;border-radius:8px;text-decoration:none;margin-top:8px;font-size:13px}
+.admin-tabs{display:flex;gap:4px;margin:10px 0;flex-wrap:wrap}
+.ad-tab{flex:1;padding:10px;border-radius:8px;border:0;font-size:11px;font-weight:bold;cursor:pointer;min-width:70px}
+.ad-tab.on{background:#ff4444;color:#fff} .ad-tab.off{background:#1a233a;color:#aaa}
 .upload-box{background:#000;padding:12px;border-radius:10px;border:1px solid #333;margin-top:8px}
-.adsterra-box{margin:10px;background:#0f172a;padding:8px;border-radius:10px;border:1px solid #1e293b;text-align:center}
+/* ADS ZIMEPANGWA VIZURI */
+.ad-box{margin:10px;background:#0f172a;padding:8px;border-radius:10px;border:1px solid #1e293b;text-align:center;min-height:60px;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ad-label{font-size:9px;color:#666;letter-spacing:1px;margin-bottom:4px}
+.ad-slot{width:100%;display:flex;justify-content:center;align-items:center;overflow:hidden}
+.winwin-card{background:linear-gradient(135deg,#1a0f2e,#0a0f1e);border:1px solid #a855f7}
 </style>
 </head>
 <body>
-<div class="top"><span>🟨 MASSEY TRONICS 5.0 - 3 ADS LIVE</span><span id="topName" style="color:#fff;font-size:11px"></span></div>
+<div class="top"><span>🟨 MASSEY TRONICS 6.0</span><span id="topName" style="color:#fff;font-size:11px"></span></div>
 
-<div id="authPage"><div class="card">
-<div class="auth">
-<button class="a-btn on" id="bSign" onclick="window.switchAuth('signup')">📝 KUFUNGUA ACCOUNT</button>
-<button class="a-btn off" id="bLog" onclick="window.switchAuth('login')">🔐 LOGIN</button>
-</div>
-<div id="signupPage" style="margin-top:12px">
-<div style="color:#facc15;font-weight:bold">✅ KUFUNGUA ACCOUNT</div>
-<input id="sName" placeholder="Jina - MASSEY uwe ADMIN">
-<input id="sPhone" placeholder="Namba 255...">
-<div class="face-area"><div class="face-box" id="fb1"><div id="ph1" style="color:#666;font-size:12px">Bonyeza START CAMERA</div><video id="v1" autoplay playsinline></video><div class="face-overlay" id="ov1" style="display:none"></div></div></div>
-<button class="btn" onclick="window.startCamera(1)" id="c1">📷 START CAMERA</button>
-<button class="btn" onclick="window.capture(1)" id="t1" style="display:none;background:#22c55e">📸 CAPTURE</button>
-<button class="btn" onclick="window.signup()" style="background:#fff">FUNGUA ACCOUNT</button>
-</div>
-<div id="loginPage" style="display:none;margin-top:12px">
-<div style="color:#22c55e;font-weight:bold">🔐 LOGIN</div>
-<input id="lPhone" placeholder="Namba 255...">
-<div class="face-area"><div class="face-box" id="fb2"><div id="ph2" style="color:#666">Bonyeza SCAN</div><video id="v2" autoplay playsinline></video><div class="face-overlay" id="ov2" style="display:none"></div></div></div>
-<button class="btn" onclick="window.startCamera(2)" id="c2">📷 START SCAN</button>
-<button class="btn" onclick="window.capture(2)" id="t2" style="display:none;background:#22c55e">📸 SCAN</button>
-<button class="btn" onclick="window.login()" style="background:#22c55e">INGIA</button>
-</div>
+<div id="authPage"><div class="card" style="text-align:center">
+<h2 style="color:#facc15;margin:5px 0">Karibu Massey Tronics</h2>
+<p style="color:#aaa;font-size:13px">Mwanza • Nguo • Games • IT • WinWin<br>Malipo: M-Pesa / Tigo Pesa</p>
+<input id="sName" placeholder="Jina lako - weka MASSEY uwe ADMIN" style="text-align:left">
+<input id="sPhone" placeholder="Namba 255..." style="text-align:left">
+<button class="btn" onclick="window.signup()">INGIA / FUNGUA ACCOUNT</button>
+<p style="font-size:11px;color:#888">Hakuna picha ya uso. Namba yako ndio account yako.</p>
 </div></div>
 
 <div id="system" style="display:none">
 <div class="main-nav">
-<button class="m-tab active" id="mHome" onclick="window.mainTab('home')">🏠 HOME</button>
+<button class="m-tab active" id="mHome" onclick="window.mainTab('home')">🏠 DUKA</button>
 <button class="m-tab off" id="mProf" onclick="window.mainTab('profile')">👤 PROFILE</button>
+<button class="m-tab off" id="mWin" onclick="window.mainTab('winwin')">🎰 WINWIN 18+</button>
 <button class="m-tab off" id="mAdmin" onclick="window.mainTab('admin')" style="display:none">📤 ADMIN</button>
 </div>
 
 <div id="home" class="mainSec">
 
-<!-- ✅ AD 1 - KEY 32080848 - BANNER JUU 320x50 - JUU YA GAMES KAMA KWENYE PICHA YAKO -->
-<div class="adsterra-box" id="adBoxTop" style="display:block">
-<div style="font-size:8px;color:#22c55e">✅ AD 1 LIVE - 32080848 - BANNER JUU</div>
-<div id="topAdContainer">
-<script type="text/javascript">
-  atOptions = {
-    'key' : '32080848',
-    'format' : 'iframe',
-    'height' : 50,
-    'width' : 320,
-    'params' : {}
-  };
-</script>
+<!-- AD 1 - JUU - 32080848 - BANNER 320x50 -->
+<div class="ad-box">
+<div class="ad-label">ADVERTISEMENT</div>
+<div class="ad-slot" id="adTop">
+<script type="text/javascript">atOptions={'key':'32080848','format':'iframe','height':50,'width':320,'params':{}};</script>
 <script type="text/javascript" src="//www.highperformanceformat.com/32080848/invoke.js"></script>
 </div>
 </div>
 
 <div class="home-nav">
-<button class="h-tab active" id="hGames" onclick="window.homeTab('games')">GAMES</button>
-<button class="h-tab off" id="hIt" onclick="window.homeTab('it')">IT ISSUES</button>
-<button class="h-tab off" id="hGamb" onclick="window.homeTab('gamb')">GAMBLING</button>
+<button class="h-tab active" id="hGames" onclick="window.homeTab('games')">🎮 GAMES</button>
+<button class="h-tab off" id="hIt" onclick="window.homeTab('it')">💻 IT</button>
+<button class="h-tab off" id="hNguo" onclick="window.homeTab('nguo')">👕 NGUO</button>
 </div>
 
 <div id="games" class="homeSec"><div class="card"><div class="grid" id="gGrid"></div></div></div>
-<div id="it" class="homeSec" style="display:none"><div class="card" id="itGrid"></div></div>
-<div id="gamb" class="homeSec" style="display:none"><div class="card" id="gambGrid"></div></div>
+<div id="it" class="homeSec" style="display:none"><div class="card"><div id="itGrid"></div></div></div>
+<div id="nguo" class="homeSec" style="display:none"><div class="card"><div class="grid" id="nguoGrid"></div></div></div>
 
-<!-- ✅ AD 2 - KEY 32080849 - NATIVE 300x250 - KATI YA GAMES -->
-<div class="adsterra-box">
-<div style="font-size:8px;color:#22c55e">✅ AD 2 LIVE - 32080849 - NATIVE KATI</div>
-<div id="nativeAd">
-<script type="text/javascript">
-  atOptions = {
-    'key' : '32080849',
-    'format' : 'iframe',
-    'height' : 250,
-    'width' : 300,
-    'params' : {}
-  };
-</script>
+<!-- AD 2 - KATI - 32080849 - NATIVE 300x250 -->
+<div class="ad-box">
+<div class="ad-label">ADVERTISEMENT</div>
+<div class="ad-slot" id="adMid">
+<script type="text/javascript">atOptions={'key':'32080849','format':'iframe','height':250,'width':300,'params':{}};</script>
 <script type="text/javascript" src="//www.highperformanceformat.com/32080849/invoke.js"></script>
 </div>
 </div>
-
+<p style="text-align:center;color:#888;font-size:11px;padding:0 10px">👕 Nguo mpya kila wiki - Weka Order WhatsApp upate delivery Mwanza</p>
 </div>
 
-<div id="profile" class="mainSec" style="display:none"><div class="card" style="text-align:center"><img id="pImg" style="width:90px;height:90px;border-radius:50%;border:3px solid #facc15;object-fit:cover"><div id="pName" style="font-weight:bold;margin-top:10px"></div><div id="pPhone" style="font-size:11px;color:#aaa"></div><button class="btn" style="background:#ff4444;color:#fff;margin-top:12px" onclick="window.logout()">LOGOUT</button></div></div>
+<div id="profile" class="mainSec" style="display:none"><div class="card" style="text-align:center">
+<div id="pAvatar" style="width:80px;height:80px;border-radius:50%;background:#facc15;color:#000;font-size:36px;display:flex;align-items:center;justify-content:center;margin:0 auto;font-weight:900">M</div>
+<div id="pName" style="font-weight:bold;margin-top:10px"></div><div id="pPhone" style="font-size:11px;color:#aaa"></div>
+<button class="btn" style="background:#ff4444;color:#fff;margin-top:12px" onclick="window.logout()">LOGOUT</button></div></div>
+
+<!-- WINWIN - KANDO KABISA, SIO NDANI YA DUKA -->
+<div id="winwin" class="mainSec" style="display:none"><div class="card winwin-card">
+<div style="text-align:center"><div style="font-size:30px">🎰</div><h2 style="margin:5px 0">WINWIN PARTNERS</h2><span style="background:#ff4444;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:bold">18+ TU</span>
+<p style="color:#ccc;font-size:13px;line-height:1.5">Hapa ni kwa watu wazima tu wanaopenda michezo ya kubashiri.<br><b style="color:#facc15">Onyo:</b> Kubashiri kuna hatari. Cheza kwa pesa unayoweza kupoteza. Usikope kucheza.</p></div>
+<!-- WEKA LINK ZAKO HAPA CHINI -->
+<a href="https://PASTE-LINK-YAKO-YA-WINWIN-HAPA" target="_blank" class="btn btn-green" style="text-align:center;text-decoration:none;display:block">🎯 JIUNGE WINWIN SASA</a>
+<a href="https://PASTE-LINK-YAKO-YA-MINES-ASSISTANT-HAPA" target="_blank" class="btn" style="text-align:center;text-decoration:none;display:block;background:#a855f7;color:#fff">🤖 MINES ASSISTANT</a>
+<p style="font-size:11px;color:#888;text-align:center">Ukiingia kupitia link hii, unakuwa chini yangu na unapata support.</p>
+</div></div>
 
 <div id="admin" class="mainSec" style="display:none"><div class="card">
-<div style="color:#ff4444;font-weight:bold">📤 ADMIN - 3 KEYS ACTIVE</div>
-<div style="font-size:10px;color:#22c55e">✅ 32080848 JUU | ✅ 32080849 KATI | ✅ 32080850 CHINI - ZOTE LIVE!</div>
+<div style="color:#ff4444;font-weight:bold">📤 ADMIN - WEKA BIDHAA</div>
 <div class="admin-tabs">
 <button class="ad-tab on" id="tabG" onclick="window.adminTab('games')">GAMES</button>
 <button class="ad-tab off" id="tabI" onclick="window.adminTab('it')">IT</button>
-<button class="ad-tab off" id="tabGa" onclick="window.adminTab('gamb')">GAMB</button>
-<button class="ad-tab off" id="tabAd" onclick="window.adminTab('ads')">💰 ADS</button>
+<button class="ad-tab off" id="tabN" onclick="window.adminTab('nguo')">NGUO</button>
 </div>
-<div id="adGames" class="upload-box"><input id="adName" placeholder="Game"><input id="adPrice" placeholder="TZS 3000"><select id="adCat"><option value="football">FOOTBALL</option><option value="action">ACTION</option><option value="sports">SPORTS</option><option value="all">ALL</option></select><button class="btn" onclick="window.uploadGame()">➕ WEKA GAME</button></div>
-<div id="adIt" class="upload-box" style="display:none"><input id="itName" placeholder="Windows 11"><input id="itPrice" placeholder="15000"><button class="btn" onclick="window.uploadIt()">➕ WEKA IT</button></div>
-<div id="adGamb" class="upload-box" style="display:none"><input id="gName" placeholder="Simba vs Yanga"><input id="gOdds" placeholder="1.85"><input id="gTime" placeholder="Leo 19:00"><button class="btn" onclick="window.uploadGamb()">➕ WEKA GAMB</button></div>
-<div id="adAds" class="upload-box" style="display:none;border-color:#22c55e"><input id="adsTitle" placeholder="Biashara"><input id="adsDesc" placeholder="Maelezo"><input id="adsLink" placeholder="wa.me/..."><input id="adsPay" placeholder="20000"><select id="adsPos"><option value="top">JUU</option><option value="sticky">CHINI</option></select><button class="btn" style="background:#22c55e" onclick="window.uploadAds()">💰 WEKA ADS</button></div>
+<div id="adGames" class="upload-box"><input id="adName" placeholder="Game - mf: FC 26"><input id="adPrice" placeholder="Bei - 3000"><button class="btn" onclick="window.uploadGame()">➕ WEKA GAME</button></div>
+<div id="adIt" class="upload-box" style="display:none"><input id="itName" placeholder="Huduma - mf: Windows 11"><input id="itPrice" placeholder="Bei - 15000"><button class="btn" onclick="window.uploadIt()">➕ WEKA IT</button></div>
+<div id="adNguo" class="upload-box" style="display:none"><input id="nName" placeholder="Nguo - mf: Hoodie Nyeusi"><input id="nPrice" placeholder="Bei - 33000"><input id="nSize" placeholder="Size - M, L, XL"><input id="nImg" placeholder="Link ya picha"><button class="btn" style="background:#22c55e" onclick="window.uploadNguo()">➕ WEKA NGUO</button></div>
 <div id="adStatus" style="font-size:12px;color:#22c55e;margin-top:10px;display:none"></div>
-<div id="adminList" style="margin-top:12px;font-size:11px"></div>
 </div></div>
 </div>
 
-<div id="stickyAd" class="sticky-ad" style="display:none"><div style="flex:1"><div style="font-size:13px;font-weight:bold;color:#facc15" id="stickyTitle"></div><div style="font-size:11px;color:#aaa" id="stickyDesc"></div></div><div style="display:flex;gap:6px"><a id="stickyLink" href="#" target="_blank" style="background:#facc15;color:#000;padding:8px 14px;border-radius:20px;font-size:12px;font-weight:bold;text-decoration:none">ONA</a><button onclick="document.getElementById('stickyAd').style.display='none'" style="background:#333;color:#fff;border:0;padding:8px 10px;border-radius:50%">X</button></div></div>
-
-<!-- ✅ AD 3 - KEY 32080850 - SOCIAL BAR / STICKY - CHINI KABISA - INAFUATA MTU - INALIPA SANA -->
-<script type="text/javascript">
-  atOptions = {
-    'key' : '32080850',
-    'format' : 'iframe',
-    'height' : 50,
-    'width' : 320,
-    'params' : {}
-  };
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/32080850/invoke.js"></script>
-
-<!-- SOCIAL BAR YA KWELI - KEY 32080850 -->
-<div style="position:fixed;bottom:0;left:0;right:0;z-index:100;background:#000;text-align:center;padding:2px">
-<div style="font-size:7px;color:#444">AD 3 - 32080850 - SOCIAL BAR</div>
-<script type="text/javascript">
-  atOptions = {
-    'key' : '32080850',
-    'format' : 'iframe',
-    'height' : 60,
-    'width' : 468,
-    'params' : {}
-  };
-</script>
+<!-- AD 3 - CHINI - 32080850 - SOCIAL BAR - HAIZIBI KITU SASA -->
+<div style="position:fixed;bottom:0;left:0;right:0;z-index:100;background:#000;text-align:center;padding:3px 0;border-top:1px solid #222">
+<div style="font-size:8px;color:#444">ADVERTISEMENT</div>
+<script type="text/javascript">atOptions={'key':'32080850','format':'iframe','height':50,'width':320,'params':{}};</script>
 <script type="text/javascript" src="//www.highperformanceformat.com/32080850/invoke.js"></script>
 </div>
 
 <script>
-window.fd1=null; window.fd2=null; window.db=null; window.stream=null;
-let req=indexedDB.open("MASSEY_FINAL_5_3KEYS",1);
-req.onupgradeneeded=function(e){
-  let d=e.target.result;
-  d.createObjectStore("accounts",{keyPath:"phone"});
-  d.createObjectStore("games",{autoIncrement:true});
-  d.createObjectStore("it",{autoIncrement:true});
-  d.createObjectStore("gamb",{autoIncrement:true});
-  d.createObjectStore("ads",{autoIncrement:true});
+window.db=null;
+let req=indexedDB.open("MASSEY_V6_ADS",1);
+req.onupgradeneeded=function(e){let d=e.target.result; d.createObjectStore("accounts",{keyPath:"phone"}); d.createObjectStore("games",{autoIncrement:true}); d.createObjectStore("it",{autoIncrement:true}); d.createObjectStore("nguo",{autoIncrement:true});};
+req.onsuccess=function(e){window.db=e.target.result; window.loadAll(); let c=localStorage.getItem('cur'); if(c) setTimeout(window.enter,400);};
+window.signup=function(){let name=document.getElementById('sName').value.trim(),phone=document.getElementById('sPhone').value.trim(); if(!name||!phone) return alert('Weka jina na namba'); let isAdmin=name.toLowerCase().includes('massey'); window.db.transaction("accounts","readwrite").objectStore("accounts").put({name,phone,isAdmin}).onsuccess=function(){localStorage.setItem('cur',phone); location.reload();};};
+window.enter=function(){let phone=localStorage.getItem('cur'); if(!phone||!window.db) return; window.db.transaction("accounts","readonly").objectStore("accounts").get(phone).onsuccess=function(e){let a=e.target.result; if(!a) return; document.getElementById('authPage').style.display='none'; document.getElementById('system').style.display='block'; document.getElementById('pName').innerText=a.name; document.getElementById('pPhone').innerText=a.phone; document.getElementById('pAvatar').innerText=a.name.charAt(0).toUpperCase(); document.getElementById('topName').innerText=a.name+(a.isAdmin?' (ADMIN)':''); if(a.isAdmin) document.getElementById('mAdmin').style.display='block'; window.loadAll();};};
+function waLink(n,p){return "https://wa.me/255000000000?text="+encodeURIComponent("Habari Massey! Nataka: "+n+" - Bei: "+p); }
+window.uploadGame=function(){let n=document.getElementById('adName').value,p=document.getElementById('adPrice').value; if(!n) return alert('Jaza'); window.db.transaction("games","readwrite").objectStore("games").add({name:n,price:p,time:Date.now()}).onsuccess=function(){window.ok(n);};};
+window.uploadIt=function(){let n=document.getElementById('itName').value,p=document.getElementById('itPrice').value; if(!n) return alert('Jaza'); window.db.transaction("it","readwrite").objectStore("it").add({name:n,price:p,time:Date.now()}).onsuccess=function(){window.ok(n);};};
+window.uploadNguo=function(){let n=document.getElementById('nName').value,p=document.getElementById('nPrice').value,s=document.getElementById('nSize').value,img=document.getElementById('nImg').value; if(!n) return alert('Jaza'); window.db.transaction("nguo","readwrite").objectStore("nguo").add({name:n,price:p,size:s,img:img,time:Date.now()}).onsuccess=function(){window.ok(n);};};
+window.ok=function(m){let s=document.getElementById('adStatus'); s.style.display='block'; s.innerHTML='✅ '+m+' imewekwa!'; window.loadAll();};
+window.loadAll=function(){if(!window.db) return;
+window.db.transaction("games","readonly").objectStore("games").getAll().onsuccess=function(e){let g=e.target.result; document.getElementById('gGrid').innerHTML=g.length?g.map(x=>`<div class="item"><b>${x.name}</b><br><span class="price">TZS ${x.price}</span><a class="order-btn" href="${waLink(x.name,x.price)}" target="_blank">Order WhatsApp</a></div>`).join(''):'<div style="grid-column:1/3;text-align:center;color:#888;padding:20px">Hakuna Games bado</div>';};
+window.db.transaction("it","readonly").objectStore("it").getAll().onsuccess=function(e){let g=e.target.result; document.getElementById('itGrid').innerHTML=g.length?g.map(x=>`<div class="item" style="margin-bottom:8px"><b>${x.name}</b> - <span class="price">TZS ${x.price}</span><a class="order-btn" href="${waLink(x.name,x.price)}" target="_blank">Order WhatsApp</a></div>`).join(''):'<div style="text-align:center;color:#888">Hakuna IT bado</div>';};
+window.db.transaction("nguo","readonly").objectStore("nguo").getAll().onsuccess=function(e){let g=e.target.result; document.getElementById('nguoGrid').innerHTML=g.length?g.map(x=>`<div class="item">${x.img?`<img src="${x.img}">`:'<div style="height:110px;background:#1a233a;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:30px">👕</div>'}<b>${x.name}</b><br><small style="color:#aaa">${x.size||''}</small><br><span class="price">TZS ${x.price}</span><a class="order-btn" href="${waLink(x.name,x.price)}" target="_blank">Order WhatsApp</a></div>`).join(''):'<div style="grid-column:1/3;text-align:center;color:#888;padding:20px">Hakuna Nguo bado</div>';};
 };
-req.onsuccess=function(e){ window.db=e.target.result; window.loadAll(); };
-window.startCamera=async function(n){
-  try{
-    let v=document.getElementById('v'+n);
-    let s=await navigator.mediaDevices.getUserMedia({video:{facingMode:"user"},audio:false});
-    window.stream=s; v.srcObject=s; v.style.display='block'; await v.play();
-    document.getElementById('ph'+n).style.display='none';
-    document.getElementById('ov'+n).style.display='block';
-    document.getElementById('c'+n).style.display='none';
-    document.getElementById('t'+n).style.display='block';
-  }catch(err){ alert('Camera: http://localhost:8000 - '+err.message); }
-};
-window.capture=function(n){
-  let v=document.getElementById('v'+n);
-  if(v.videoWidth==0){ alert('Subiri'); return; }
-  let c=document.createElement('canvas'); c.width=v.videoWidth; c.height=v.videoHeight;
-  c.getContext('2d').drawImage(v,0,0);
-  let data=c.toDataURL('image/jpeg',0.7);
-  if(n==1) window.fd1=data; else window.fd2=data;
-  document.getElementById('fb'+n).innerHTML='<img src="'+data+'" style="width:100%;height:100%;object-fit:cover">';
-  if(window.stream) window.stream.getTracks().forEach(t=>t.stop());
-};
-window.signup=function(){
-  let name=document.getElementById('sName').value, phone=document.getElementById('sPhone').value;
-  if(!name||!phone||!window.fd1){ alert('Jaza zote'); return; }
-  let isAdmin=name.toLowerCase().includes('massey');
-  window.db.transaction("accounts","readwrite").objectStore("accounts").put({name,phone,face:window.fd1,isAdmin}).onsuccess=function(){ localStorage.setItem('cur',phone); location.reload(); };
-};
-window.login=function(){
-  let phone=document.getElementById('lPhone').value;
-  if(!phone||!window.fd2){ alert('Jaza'); return; }
-  window.db.transaction("accounts","readonly").objectStore("accounts").get(phone).onsuccess=function(e){
-    if(!e.target.result){ alert('Haipo'); return; }
-    localStorage.setItem('cur',phone); location.reload();
-  };
-};
-window.enter=function(){
-  let phone=localStorage.getItem('cur'); if(!phone||!window.db) return;
-  window.db.transaction("accounts","readonly").objectStore("accounts").get(phone).onsuccess=function(e){
-    let a=e.target.result; if(!a) return;
-    document.getElementById('authPage').style.display='none';
-    document.getElementById('system').style.display='block';
-    document.getElementById('pName').innerText=a.name;
-    document.getElementById('pPhone').innerText=a.phone;
-    document.getElementById('pImg').src=a.face;
-    document.getElementById('topName').innerText=a.name+(a.isAdmin?' (ADMIN)':'');
-    if(a.isAdmin) document.getElementById('mAdmin').style.display='block';
-    window.loadAll();
-  };
-};
-window.uploadGame=function(){
-  let name=document.getElementById('adName').value, price=document.getElementById('adPrice').value, cat=document.getElementById('adCat').value;
-  if(!name) return alert('Jaza');
-  window.db.transaction("games","readwrite").objectStore("games").add({name,price,cat,time:Date.now()}).onsuccess=function(){ window.ok(name); };
-};
-window.uploadIt=function(){
-  let name=document.getElementById('itName').value, price=document.getElementById('itPrice').value;
-  if(!name) return alert('Jaza');
-  window.db.transaction("it","readwrite").objectStore("it").add({name,price,time:Date.now()}).onsuccess=function(){ window.ok(name); };
-};
-window.uploadGamb=function(){
-  let name=document.getElementById('gName').value, price=document.getElementById('gOdds').value, time=document.getElementById('gTime').value;
-  if(!name) return alert('Jaza');
-  window.db.transaction("gamb","readwrite").objectStore("gamb").add({name,price,time,timeStamp:Date.now()}).onsuccess=function(){ window.ok(name); };
-};
-window.uploadAds=function(){
-  let title=document.getElementById('adsTitle').value, desc=document.getElementById('adsDesc').value, link=document.getElementById('adsLink').value, pay=document.getElementById('adsPay').value, pos=document.getElementById('adsPos').value;
-  if(!title){ alert('Jina'); return; }
-  if(!pay) pay="20000";
-  let tx=window.db.transaction("ads","readwrite");
-  tx.objectStore("ads").add({title,desc,link,pay,pos,time:Date.now()});
-  tx.oncomplete=function(){
-    let s=document.getElementById('adStatus'); s.style.display='block'; s.innerHTML='✅ '+title+' imewekwa TZS '+pay; window.loadAll(); window.mainTab('home');
-  };
-};
-window.ok=function(m){ let s=document.getElementById('adStatus'); s.style.display='block'; s.innerHTML='✅ '+m+' imewekwa!'; window.loadAll(); };
-window.loadAll=function(){
-  if(!window.db) return;
-  window.db.transaction("games","readonly").objectStore("games").getAll().onsuccess=function(e){
-    let g=e.target.result;
-    document.getElementById('gGrid').innerHTML=g.length?g.map(function(x){ return '<div class="item"><b>'+x.name+'</b><br><small>'+x.price+'</small><br><small style="color:#facc15">'+x.cat.toUpperCase()+'</small></div>'; }).join(''):'<div style="grid-column:1/3;text-align:center;color:#555;padding:20px">Hakuna Games - ADMIN weka</div>';
-  };
-};
-window.switchAuth=function(id){
-  document.getElementById('signupPage').style.display=id=='signup'?'block':'none';
-  document.getElementById('loginPage').style.display=id=='login'?'block':'none';
-  document.getElementById('bSign').className=id=='signup'?'a-btn on':'a-btn off';
-  document.getElementById('bLog').className=id=='login'?'a-btn on':'a-btn off';
-};
-window.mainTab=function(id){
-  document.querySelectorAll('.mainSec').forEach(function(c){ c.style.display='none'; });
-  document.getElementById(id).style.display='block';
-  document.querySelectorAll('.m-tab').forEach(function(t){ t.classList.remove('active'); t.classList.add('off'); });
-  let el=document.getElementById('m'+id.charAt(0).toUpperCase()+id.slice(1));
-  if(el){ el.classList.add('active'); el.classList.remove('off'); }
-};
-window.homeTab=function(id){
-  document.querySelectorAll('.homeSec').forEach(function(c){ c.style.display='none'; });
-  document.getElementById(id).style.display='block';
-  document.querySelectorAll('.h-tab').forEach(function(t){ t.classList.remove('active'); t.classList.add('off'); });
-  let el=document.getElementById('h'+id.charAt(0).toUpperCase()+id.slice(1));
-  if(el) el.classList.add('active');
-};
-window.adminTab=function(id){
-  ['adGames','adIt','adGamb','adAds'].forEach(function(s){ let el=document.getElementById(s); if(el) el.style.display='none'; });
-  let map={games:'adGames',it:'adIt',gamb:'adGamb',ads:'adAds'};
-  let toShow=document.getElementById(map[id]);
-  if(toShow) toShow.style.display='block';
-  document.querySelectorAll('.ad-tab').forEach(function(t){ t.classList.remove('on'); t.classList.add('off'); });
-  let mapBtn={games:'tabG',it:'tabI',gamb:'tabGa',ads:'tabAd'};
-  let btn=document.getElementById(mapBtn[id]);
-  if(btn){ btn.classList.add('on'); btn.classList.remove('off'); }
-};
-window.logout=function(){ localStorage.removeItem('cur'); location.reload(); };
-window.onload=function(){ let c=localStorage.getItem('cur'); if(c){ setTimeout(function(){ window.enter(); },600); } };
+window.mainTab=function(id){document.querySelectorAll('.mainSec').forEach(c=>c.style.display='none'); document.getElementById(id).style.display='block'; document.querySelectorAll('.m-tab').forEach(t=>{t.classList.remove('active');t.classList.add('off');}); let map={home:'mHome',profile:'mProf',winwin:'mWin',admin:'mAdmin'}; let el=document.getElementById(map[id]); if(el){el.classList.add('active');el.classList.remove('off');}};
+window.homeTab=function(id){document.querySelectorAll('.homeSec').forEach(c=>c.style.display='none'); document.getElementById(id).style.display='block'; document.querySelectorAll('.h-tab').forEach(t=>{t.classList.remove('active');t.classList.add('off');}); let map={games:'hGames',it:'hIt',nguo:'hNguo'}; let el=document.getElementById(map[id]); if(el) el.classList.add('active');};
+window.adminTab=function(id){['adGames','adIt','adNguo'].forEach(s=>document.getElementById(s).style.display='none'); let map={games:'adGames',it:'adIt',nguo:'adNguo'}; document.getElementById(map[id]).style.display='block'; document.querySelectorAll('.ad-tab').forEach(t=>{t.classList.remove('on');t.classList.add('off');}); let mapBtn={games:'tabG',it:'tabI',nguo:'tabN'}; document.getElementById(mapBtn[id]).classList.add('on');};
+window.logout=function(){localStorage.removeItem('cur'); location.reload();};
 </script>
 </body>
 </html>
